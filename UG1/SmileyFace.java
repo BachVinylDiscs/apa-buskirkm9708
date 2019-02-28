@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Max Buskirk
+//Date - February 28, 2019
+//Class - AP Computer Science A
+//Lab - UG1
 
 import java.awt.Graphics;
 import java.awt.Color;
