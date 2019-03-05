@@ -10,10 +10,13 @@ import static java.lang.System.*;
 
 public class NumberShifterRunner
 {
-	public static void main( String args[] ) throws IOException
-	{
-		//add test cases
-	}
+  public static void main( String args[] ) throws IOException
+  {
+    Scanner squee=new Scanner(in);
+    System.out.print("Enter array size: ");
+    int size=squee.nextInt();
+    System.out.println(Arrays.toString(NumberShifter.shiftEm(size)));
+  }
 }
 
 
