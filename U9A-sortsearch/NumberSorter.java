@@ -14,7 +14,7 @@ public class NumberSorter
 
   public static int[] getSortedDigitArray(int number) 
   {
-    int num=((Math.pow(10,number)-Math.pow(10,number-1))*Math.random())+Math.pow(10,number-1);
+    int num=((int)(Math.pow(10,number)-(int)Math.pow(10,number-1))*(int)Math.random())+(int)Math.pow(10,number-1);
     int[] arr=new int[number];
     for(int i:arr){
       i=num%10;
