@@ -8,7 +8,7 @@ import java.awt.Canvas;
 
 public class BlockTestTwo extends Canvas
 {
-  public BlockTestTwo()
+  public static void main(String[] args)
   {
     setBackground(Color.WHITE);
   }
