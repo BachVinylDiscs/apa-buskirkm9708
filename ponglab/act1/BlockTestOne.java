@@ -22,6 +22,10 @@ class BlockTestOne
     out.println(four);
                 
     out.println(one.equals(two));
-    out.println(one.equals(one));               
+    out.println(one.equals(one));
+    
+    BlockTestTwo block = new BlockTestTwo();
+    block.paint(Graphics window);
+    
   }
 }
