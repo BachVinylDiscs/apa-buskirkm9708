@@ -25,7 +25,6 @@ class BlockTestOne
     out.println(one.equals(one));
     
     BlockTestTwo block = new BlockTestTwo();
-    block.paint(Graphics window);
     
   }
 }
