@@ -17,44 +17,64 @@ public class Ball extends Block
     ySpeed = 1;
   }
 
-  //add the other Ball constructors
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-           
-  //add the set methods
-   
+  public Ball(int x,int y)
+  {
+    super(x,y);
+  }
+
+  public Ball(int x,int y,int w,int h)
+  {
+    super(x,y,w,h);
+  }
+
+  public Ball(int x,int y,int w,int h,Color c)
+  { 
+    super(x,y,w,h,c);
+  }
+
+  public Ball(int x,int y,int w,int h,Color c,int xs,int ys)
+  {
+    super(x,y,w,h,c);
+    setXSpeed(xs);
+    setYSpeed(ys);
+  }
+  
+  public void setXSpeed(int x)
+  {
+    xSpeed=x;
+  }
+
+  public void setYSpeed(int y)
+  {
+    ySpeed=y;
+  }
 
   public void moveAndDraw(Graphics window)
   {
-    //draw a white ball at old ball location
-
-
+    draw(window,Color.WHITE);    
     setX(getX()+xSpeed);
-    //setY
-
-    //draw the ball at its new location
+    setY(getY()+ySpeed);
+    draw(window,Color.WHITE);
   }
    
   public boolean equals(Object obj)
   {
-
-
-
-
-    return false;
+    Ball other=(Ball)obj;
+    return super.equals(other)&&xSpeed==other.getXSpeed()&&ySpeed==other.getYSpeed();
   }   
 
-  //add the get methods
+  public int getXSpeed()
+  {
+    return xSpeed;
+  }
 
-  //add a toString() method
+  public int getYSpeed()
+  {
+    return ySpeed;
+  }
+
+  public String toString()
+  {
+    return super.toString()+"\nXSpeed is "+xSpeed+"\nYSpeed is "+ySpeed;
+  }
 }
