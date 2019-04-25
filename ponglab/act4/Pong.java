@@ -88,6 +88,29 @@ public class Pong extends Canvas implements KeyListener, Runnable
     }
 
     //see if the paddles need to be moved
+    if (keys[0])
+    {
+      //move left paddle up and draw it on the window
+      if(leftPaddle.getY()>10)
+      leftPaddle.moveUpAndDraw(window);
+    }
+    if (keys[1])
+    {
+      //move left paddle down and draw it on the window
+      if(leftPaddle.getY()+leftPaddle.getHeight()<590)
+      leftPaddle.moveDownAndDraw(window);
+    }
+    if (keys[2])
+    {
+      if(rightPaddle.getY()>10)
+      rightPaddle.moveUpAndDraw(window);
+    }
+    if (keys[3])
+    {
+      if(rightPaddle.getY()+rightPaddle.getHeight()<590)
+      rightPaddle.moveDownAndDraw(window);
+    }
+  }
 
     twoDGraph.drawImage(back, null, 0, 0);
   }
