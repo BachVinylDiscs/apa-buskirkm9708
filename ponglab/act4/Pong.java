@@ -110,8 +110,6 @@ public class Pong extends Canvas implements KeyListener, Runnable
       if(rightPaddle.getY()+rightPaddle.getHeight()<590)
       rightPaddle.moveDownAndDraw(window);
     }
-  }
-
     twoDGraph.drawImage(back, null, 0, 0);
   }
 
