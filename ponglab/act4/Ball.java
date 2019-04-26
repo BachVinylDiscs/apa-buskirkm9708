@@ -7,7 +7,7 @@ package ponglab.act4;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Ball extends Block implements Collidable<T>
+public class Ball extends Block implements Collidable<Block>
 {
   private int xSpeed;
   private int ySpeed;
@@ -80,6 +80,7 @@ public class Ball extends Block implements Collidable<T>
   {
     return ySpeed;
   }
+  
   
   if(ball.getX()<=leftPaddle.getX()+leftPaddle.getWidth()&&ball.getY()>=leftPaddle.getY()-ball.getHeight()&&ball.getY()<=leftPaddle.getY()+leftPaddle.getHeight()+ball.getHeight())                
   {
