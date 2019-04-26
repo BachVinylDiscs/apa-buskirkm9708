@@ -1,3 +1,5 @@
+package ponglab.act2;
+
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -

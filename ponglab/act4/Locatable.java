@@ -1,4 +1,4 @@
-package ponglab.act1;
+package ponglab.act4;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
