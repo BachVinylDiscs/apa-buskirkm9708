@@ -39,14 +39,14 @@ public class Score
     window.drawString("Score: "+score,xPos,yPos);
   }
   
-  public addScore(int x)
+  public addScore(Graphics window,int x)
   {
     window.setColor(Color.WHITE);
     window.drawString("Score: "+score,xPos,yPos);
     score+=x;
   }
   
-  public setScore(int x)
+  public setScore(Graphics window,int x)
   {
     window.setColor(Color.WHITE);
     window.drawString("Score: "+score,xPos,yPos);
