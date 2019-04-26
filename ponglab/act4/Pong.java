@@ -76,7 +76,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
     topWall.draw(graphToBack);
     bottomWall.draw(graphToBack);
     leftScore.draw(graphToBack,50,10);
-    rightScore.draw(graphtoBack,700,10);
+    rightScore.draw(graphToBack,700,10);
 
 
     //see if ball hits left wall or right wall
