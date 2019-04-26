@@ -81,9 +81,14 @@ public class Ball extends Block implements Collidable<T>
     return ySpeed;
   }
   
-  public boolean didCollideLeft(<Block> obj)
+  if(ball.getX()<=leftPaddle.getX()+leftPaddle.getWidth()&&ball.getY()>=leftPaddle.getY()-ball.getHeight()&&ball.getY()<=leftPaddle.getY()+leftPaddle.getHeight()+ball.getHeight())                
   {
-    
+    ball.setXSpeed(-ball.getXSpeed());
+  }
+  
+  if(ball.getX()>=rightPaddle.getX()-ball.getWidth()&&ball.getY()>=rightPaddle.getY()-ball.getHeight()&&ball.getY()<=rightPaddle.getY()+rightPaddle.getHeight()+ball.getHeight())
+  {
+    ball.setXSpeed(-ball.getXSpeed());
   }
   
   public String toString()
