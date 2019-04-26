@@ -81,15 +81,24 @@ public class Ball extends Block implements Collidable<Block>
     return ySpeed;
   }
   
-  
-  if(ball.getX()<=leftPaddle.getX()+leftPaddle.getWidth()&&ball.getY()>=leftPaddle.getY()-ball.getHeight()&&ball.getY()<=leftPaddle.getY()+leftPaddle.getHeight()+ball.getHeight())                
+  public boolean didCollideLeft(Block block)
   {
-    ball.setXSpeed(-ball.getXSpeed());
+    return ball.getX()<=block.getX()+block.getWidth()&&ball.getX()>block.getX()&&ball.getY()>block.getY()-ball.getHeight()&&ball.getY()<block.getY()+block.getHeight();
   }
   
-  if(ball.getX()>=rightPaddle.getX()-ball.getWidth()&&ball.getY()>=rightPaddle.getY()-ball.getHeight()&&ball.getY()<=rightPaddle.getY()+rightPaddle.getHeight()+ball.getHeight())
+  public boolean didCollideRight(Block block)
   {
-    ball.setXSpeed(-ball.getXSpeed());
+    return ball.getX()+ball.getWidth()>=block.getX()&&ball.getX()+ball.getWidth()<block.getX()+block.getWidth()&&ball.getY()>block.getY()-ball.getHeight()&&ball.getY()<block.getY()+block.getHeight();
+  }
+  
+  public boolean didCollideTop(Block block)
+  {
+    return ball.getY()<=block.getY()+block.getHeight()&&ball.getY()>block.getY()&&ball.getX()>block.getX()-ball.getWidth()&&ball.getX()<block.getX()+block.getWidth();
+  }
+  
+  public boolean didCollideBottom(Block block)
+  {
+    return ball.getY()+ball.getHeight()>=block.getY()&&ball.getY()+ball.getHeight()<block.getY()+block.getHeight()&&ball.getX()>block.getX()-ball.getWidth()&&ball.getX()<block.getX()+block.getWidth();
   }
   
   public String toString()
