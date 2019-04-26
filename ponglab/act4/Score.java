@@ -18,6 +18,13 @@ public class Score
   
   public void draw(Graphics window,int x,int y)
   {
+    window.setColor(Color.BLACK);
+    window.drawString("Score: "+score,x,y);
+  }
+  
+  public void draw(Graphics window,int x,int y,Color col)
+  {
+    window.setColor(col);
     window.drawString("Score: "+score,x,y);
   }
   
