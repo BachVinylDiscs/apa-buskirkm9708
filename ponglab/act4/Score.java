@@ -30,11 +30,15 @@ public class Score
   
   public void addScore(int x)
   {
+    window.setColor(Color.WHITE);
+    window.drawString("Score: "+score,x,y);
     score+=x;
   }
   
   public void setScore(int x)
   {
+    window.setColor(Color.WHITE);
+    window.drawString("Score: "+score,x,y);
     score=x;
   }
 }
