@@ -16,7 +16,7 @@ public class Score
     score=0;
   }
   
-  public draw(Graphics window,int x,int y)
+  public void draw(Graphics window,int x,int y)
   {
     window.setColor(Color.BLACK);
     window.drawString("Score: "+score,x,y);
