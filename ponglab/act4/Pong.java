@@ -75,8 +75,8 @@ public class Pong extends Canvas implements KeyListener, Runnable
     rightPaddle.draw(graphToBack);
     topWall.draw(graphToBack);
     bottomWall.draw(graphToBack);
-    leftScore.draw(graphToBack);
-    rightScore.draw(graphtoBack);
+    leftScore.draw(graphToBack,50,10);
+    rightScore.draw(graphtoBack,700,10);
 
 
     //see if ball hits left wall or right wall
@@ -84,14 +84,14 @@ public class Pong extends Canvas implements KeyListener, Runnable
     {
       ball.setXSpeed(0);
       ball.setYSpeed(0);
-      rightScore.setScore(0);
+      leftScore.setScore(0);
     }
     
     if(ball.didCollideRight(rightWall))
     {
       ball.setXSpeed(0);
       ball.setYSpeed(0);
-      leftScore.setScore(0);
+      rightScore.setScore(0);
     }
 
     //see if the ball hits top wall or bottom wall 
@@ -101,9 +101,16 @@ public class Pong extends Canvas implements KeyListener, Runnable
     }
 
     //see if the ball hits a paddle
-    if(ball.didCollideLeft(leftPaddle)||ball.didCollideRight(rightPaddle))                
+    if(ball.didCollideLeft(leftPaddle))                
     {
       ball.setXSpeed(-ball.getXSpeed());
+      leftScore.addScore(1);
+    }
+    
+    if(ball.didCollideRight(rightPaddle))
+    {
+      ball.setXSpeed(-ball.getXSpeed());
+      rightScore.addScore(1);
     }
 
     //see if the paddles need to be moved
