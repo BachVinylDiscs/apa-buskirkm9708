@@ -16,17 +16,17 @@ public class Score
     score=0;
   }
   
-  public draw(Graphics window,int x,int y)
+  public void draw(Graphics window,int x,int y)
   {
     window.drawString("Score: "+score,x,y);
   }
   
-  public addScore(int x)
+  public void addScore(int x)
   {
     score+=x;
   }
   
-  public setScore(int x)
+  public void setScore(int x)
   {
     score=x;
   }
