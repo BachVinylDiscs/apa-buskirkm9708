@@ -1,4 +1,4 @@
-package ponglab.act4;
+//package ponglab.act4;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
@@ -22,6 +22,8 @@ public class Pong extends Canvas implements KeyListener, Runnable
   private Paddle rightPaddle;
   private Wall topWall;
   private Wall bottomWall;
+  private Wall leftWall;
+  private Wall rightWall;
   private boolean[] keys;
   private BufferedImage back;
 
@@ -32,8 +34,10 @@ public class Pong extends Canvas implements KeyListener, Runnable
     ball=new Ball(100,100,10,10,Color.BLACK,1,1);
     leftPaddle=new Paddle(10,10,10,30,Color.RED,2);
     rightPaddle=new Paddle(780,10,10,30,Color.RED,2);
-    topWall=new Wall(0,0);
-    bottomWall=new Wall(0,599);
+    topWall=new Wall(0,0,800,1);
+    bottomWall=new Wall(0,599,800,1);
+    leftWall=new Wall(0,0,1,600);
+    rightWall=new Wall(799,0,1,600);
     keys = new boolean[4];
     
     setBackground(Color.WHITE);
@@ -77,7 +81,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
     }
 
     //see if the ball hits top wall or bottom wall 
-    if(ball.didCollideTop(topWall)||ball.didCollideBottom(bottomWall)
+    if(ball.didCollideTop(topWall)||ball.didCollideBottom(bottomWall))
     {
       ball.setYSpeed(-ball.getYSpeed());
     }
