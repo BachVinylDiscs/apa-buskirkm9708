@@ -16,13 +16,18 @@ public class Score
     score=0;
   }
   
-  public paint(Graphics window)
+  public draw(Graphics window,int x,int y)
   {
-    window.drawString("Score: "+score,50,10);
+    window.drawString("Score: "+score,x,y);
   }
   
-  public addPoint(int x)
+  public addScore(int x)
   {
     score+=x;
+  }
+  
+  public setScore(int x)
+  {
+    score=x;
   }
 }
