@@ -20,6 +20,8 @@ public class Pong extends Canvas implements KeyListener, Runnable
   private Ball ball;
   private Paddle leftPaddle;
   private Paddle rightPaddle;
+  private Wall topWall;
+  private Wall bottomWall;
   private boolean[] keys;
   private BufferedImage back;
 
@@ -30,6 +32,8 @@ public class Pong extends Canvas implements KeyListener, Runnable
     ball=new Ball(100,100,10,10,Color.BLACK,1,1);
     leftPaddle=new Paddle(10,10,10,30,Color.RED,2);
     rightPaddle=new Paddle(780,10,10,30,Color.RED,2);
+    topWall=new Wall(0,0);
+    bottomWall=new Wall(0,599);
     keys = new boolean[4];
     
     setBackground(Color.WHITE);
@@ -61,30 +65,25 @@ public class Pong extends Canvas implements KeyListener, Runnable
     ball.moveAndDraw(graphToBack);
     leftPaddle.draw(graphToBack);
     rightPaddle.draw(graphToBack);
+    topWall.draw(graphToBack);
+    bottomWall.draw(graphToBack);
 
 
     //see if ball hits left wall or right wall
-    if (!(ball.getX()>=10 && ball.getX()<=790-ball.getWidth()))
+    if (ball.didCollideLeft(leftWall)||ball.didCollideRight(rightWall))
     {
       ball.setXSpeed(0);
       ball.setYSpeed(0);
     }
 
-                
-    //see if the ball hits the top or bottom wall 
-    if(!(ball.getY()>=10&&ball.getY()<=590-ball.getHeight()))
+    //see if the ball hits top wall or bottom wall 
+    if(ball.didCollideTop(topWall)||ball.didCollideBottom(bottomWall)
     {
       ball.setYSpeed(-ball.getYSpeed());
     }
 
-    //see if the ball hits the left paddle
-    if(ball.didCollideLeft(leftPaddle))                
-    {
-      ball.setXSpeed(-ball.getXSpeed());
-    }
-                
-    //see if the ball hits the right paddle
-    if(ball.didCollideRight(rightPaddle))
+    //see if the ball hits a paddle
+    if(ball.didCollideLeft(leftPaddle)||ball.didCollideRight(rightPaddle))                
     {
       ball.setXSpeed(-ball.getXSpeed());
     }
