@@ -9,6 +9,8 @@ CLASSES = \
 	Locatable.java \
 	Ball.java \
 	Paddle.java \
+	Collidable.java \
+	Wall.java \
 	Pong.java \
 	TheGame.java
 
