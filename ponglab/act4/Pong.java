@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 
 public class Pong extends Canvas implements KeyListener, Runnable
 {
+  private int dimX;
+  private int dimY;
   private Ball ball;
   private Paddle leftPaddle;
   private Paddle rightPaddle;
