@@ -40,10 +40,10 @@ public class Pong extends Canvas implements KeyListener, Runnable
     ball=new Ball(100,100,10,10,Color.BLACK,1,1);
     leftPaddle=new Paddle(10,10,10,30,Color.RED,2);
     rightPaddle=new Paddle(x-20,10,10,30,Color.RED,2);
-    topWall=new Wall(0,0,x,1);
-    bottomWall=new Wall(0,y-1,x,1);
-    leftWall=new Wall(0,0,1,y);
-    rightWall=new Wall(x-1,0,1,y);
+    topWall=new Wall(0,0,x,1,Color.WHITE);
+    bottomWall=new Wall(0,y-1,x,1,Color.WHITE);
+    leftWall=new Wall(0,0,1,y,Color.WHITE);
+    rightWall=new Wall(x-1,0,1,y,Color.WHITE);
     leftScore=new Score(50,10);
     rightScore=new Score(x-150,10);
     keys = new boolean[4];
