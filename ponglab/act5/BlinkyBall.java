@@ -11,33 +11,6 @@ import java.util.Random;
 class BlinkyBall extends Ball
 {
 
-  //constructors
-  public BlinkyBall()
-  {
-    super();
-  }
-
-  public BlinkyBall(int x, int y)
-  {
-
-
-
-  }
-
-  public BlinkyBall(int x, int y, int wid, int ht)
-  {
-
-
-
-  }
-
-  public BlinkyBall(int x, int y, int wid, int ht, int xSpd, int ySpd)
-  {
-
-
-
-  }
-
   public BlinkyBall(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
   {
 
