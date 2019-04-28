@@ -12,9 +12,9 @@ public class Paddle extends Block
   //instance variables
   private int speed;
 
-  public Paddle(int xd,int yd,int x,int y,int w,int h,Color c,int s)
+  public Paddle(int x,int y,int w,int h,Color c,int s)
   {
-    super(xd,yd,x,y,w,h,c);
+    super(x,y,w,h,c);
     speed=s;
   }
 
