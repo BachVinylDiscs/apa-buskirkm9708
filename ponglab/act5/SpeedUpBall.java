@@ -10,30 +10,25 @@ import java.util.Random;
 
 class SpeedUpBall extends Ball
 {
-
-  //instance variables
-  public SpeedUpBall(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
+  public SpeedUpBall(int x, int y, int w, int h, Color c, int xs, int ys)
   {
-
-
-
-
+    super(x,y,w,h,c,xs,ys);
   }
 
-  public void setXSpeed( int xSpd )
+  public boolean speedUp(Block block)
   {
-
-
-
-
-  }
-
-  public void setYSpeed( int ySpd )
-  {
-
-
-
-
+    if(didCollideLeft(block)||didCollideRight(block)||didCollideTop(block)||didCollideBottom(block)){
+      if(getXSpeed()>=0){
+        setXSpeed(getXSpeed()+1);
+      }else{
+        setXSpeed(getXSpeed()-1);
+      }
+      if(getYSpeed()>=0){
+        setYSpeed(getYSpeed()+1);
+      }else{
+        setYSpeed(getYSpeed()-1);
+      }
+    }
   }
 }
 
