@@ -12,33 +12,6 @@ class SpeedUpBall extends Ball
 {
 
   //instance variables
-
-  public SpeedUpBall()
-  {
-
-
-  }
-
-  public SpeedUpBall(int x, int y)
-  {
-
-
-  }
-
-
-  public SpeedUpBall(int x, int y, int xSpd, int ySpd)
-  {
-
-
-  }
-
-  public SpeedUpBall(int x, int y, int wid, int ht, int xSpd, int ySpd)
-  {
-
-
-  }
-
-
   public SpeedUpBall(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
   {
 
