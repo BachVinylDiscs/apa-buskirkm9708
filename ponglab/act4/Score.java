@@ -13,13 +13,6 @@ public class Score
   private int xPos;
   private int yPos;
   
-  public Score()
-  {
-    score=0;
-    xPos=50;
-    yPos=10;
-  }
-  
   public Score(int x,int y)
   {
     score=0;
