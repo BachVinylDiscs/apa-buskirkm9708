@@ -1,4 +1,4 @@
-//package ponglab.act4;
+//package ponglab.act5;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
@@ -13,32 +13,7 @@ public class Block implements Locatable
   private int yPos;
   private int width;
   private int height;
-
   private Color color;
-
-  public Block()
-  {
-    setPos(200,200);
-    width=5;
-    height=5;
-    color=Color.WHITE;
-  }
-
-  public Block(int x,int y)
-  {
-    setPos(x,y);
-    width=5;
-    height=5;
-    color=Color.WHITE;
-  }
-
-  public Block(int x,int y,int w,int h)
-  {
-    setPos(x,y);
-    width=w;
-    height=h;
-    color=Color.WHITE;
-  }
 
   public Block(int x,int y,int w,int h,Color col)
   {
@@ -98,6 +73,7 @@ public class Block implements Locatable
   }   
 
   //add the other get methods
+  
   public int getX()
   {
     return xPos;
