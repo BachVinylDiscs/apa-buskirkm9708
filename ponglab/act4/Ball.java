@@ -12,34 +12,6 @@ public class Ball extends Block implements Collidable<Block>
   private int xSpeed;
   private int ySpeed;
 
-  public Ball()
-  {
-    super();
-    xSpeed = 3;
-    ySpeed = 1;
-  }
-
-  public Ball(int x,int y)
-  {
-    super(x,y);
-    xSpeed = 3;
-    ySpeed = 1;
-  }
-
-  public Ball(int x,int y,int w,int h)
-  {
-    super(x,y,w,h);
-    xSpeed = 3;
-    ySpeed = 1;
-  }
-
-  public Ball(int x,int y,int w,int h,Color c)
-  { 
-    super(x,y,w,h,c);
-    xSpeed = 3;
-    ySpeed = 1;
-  }
-
   public Ball(int x,int y,int w,int h,Color c,int xs,int ys)
   {
     super(x,y,w,h,c);
