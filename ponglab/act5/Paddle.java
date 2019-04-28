@@ -12,36 +12,6 @@ public class Paddle extends Block
   //instance variables
   private int speed;
 
-  public Paddle()
-  {
-    super();
-    speed=1;
-  }
-
-  public Paddle(int x,int y)
-  {
-    super(x,y);
-    speed=1;
-  }
-
-  public Paddle(int x,int y,int s)
-  {
-    super(x,y);
-    speed=s;
-  }
-
-  public Paddle(int x,int y,int w,int h)
-  {
-    super(x,y,w,h);
-    speed=1;
-  }
-
-  public Paddle(int x,int y,int w,int h,int s)
-  {
-    super(x,y,w,h);
-    speed=s;
-  }
-
   public Paddle(int x,int y,int w,int h,Color c,int s)
   {
     super(x,y,w,h,c);
