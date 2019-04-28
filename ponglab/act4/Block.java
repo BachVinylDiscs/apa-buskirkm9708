@@ -9,27 +9,18 @@ import java.awt.Graphics;
 
 public class Block implements Locatable
 {
-  private int xDim;
-  private int yDim;
   private int xPos;
   private int yPos;
   private int width;
   private int height;
   private Color color;
 
-  public Block(int xd,int yd,int x,int y,int w,int h,Color col)
+  public Block(int x,int y,int w,int h,Color col)
   {
-    setDim(xd,yd);
     setPos(x,y);
     width=w;
     height=h;
     color=col;
-  }
-
-  public void setDim(int x,int y)
-  {
-    xDim=x;
-    yDim=y;
   }
 
   public void setPos(int x,int y)
@@ -82,16 +73,6 @@ public class Block implements Locatable
   }   
 
   //add the other get methods
-  
-  public int getXDim()
-  {
-    return xDim;
-  }
-  
-  public int getYDim()
-  {
-    return yDim;
-  }
   
   public int getX()
   {
