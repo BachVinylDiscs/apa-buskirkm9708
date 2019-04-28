@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 
 public class Pong extends Canvas implements KeyListener, Runnable
 {
+  private int dimX;
+  private int dimY;
   private Ball ball;
   private Paddle leftPaddle;
   private Paddle rightPaddle;
@@ -28,20 +30,22 @@ public class Pong extends Canvas implements KeyListener, Runnable
   private Score rightScore;
   private boolean[] keys;
   private BufferedImage back;
-
-
-  public Pong()
+  
+  public Pong(int x,int y)
   {
     //set up all variables related to the game
+    //refactored no magic number constructor
+    dimX=x;
+    dimY=y;
     ball=new Ball(100,100,10,10,Color.BLACK,1,1);
     leftPaddle=new Paddle(10,10,10,30,Color.RED,2);
-    rightPaddle=new Paddle(780,10,10,30,Color.RED,2);
-    topWall=new Wall(0,0,800,1);
-    bottomWall=new Wall(0,599,800,1);
-    leftWall=new Wall(0,0,1,600);
-    rightWall=new Wall(799,0,1,600);
+    rightPaddle=new Paddle(x-20,10,10,30,Color.RED,2);
+    topWall=new Wall(0,0,x,1,Color.WHITE);
+    bottomWall=new Wall(0,y-1,x,1,Color.WHITE);
+    leftWall=new Wall(0,0,1,y,Color.WHITE);
+    rightWall=new Wall(x-1,0,1,y,Color.WHITE);
     leftScore=new Score(50,10);
-    rightScore=new Score(700,10);
+    rightScore=new Score(x-150,10);
     keys = new boolean[4];
     
     setBackground(Color.WHITE);
@@ -50,7 +54,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
     new Thread(this).start();
     addKeyListener(this);               //starts the key thread to log key strokes
   }
-        
+  
   public void update(Graphics window){
     paint(window);
   }
@@ -135,7 +139,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
     if (keys[1])
     {
       //move left paddle down and draw it on the window
-      if(leftPaddle.getY()+leftPaddle.getHeight()<590)
+      if(leftPaddle.getY()+leftPaddle.getHeight()<dimY-10)
       leftPaddle.moveDownAndDraw(graphToBack);
     }
     if (keys[2])
@@ -145,7 +149,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
     }
     if (keys[3])
     {
-      if(rightPaddle.getY()+rightPaddle.getHeight()<590)
+      if(rightPaddle.getY()+rightPaddle.getHeight()<dimY-10)
       rightPaddle.moveDownAndDraw(graphToBack);
     }
     twoDGraph.drawImage(back, null, 0, 0);
