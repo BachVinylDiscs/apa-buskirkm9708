@@ -11,27 +11,22 @@ import java.util.Random;
 class BlinkyBall extends Ball
 {
 
-  public BlinkyBall(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
+  public BlinkyBall(int x,int y,int w,int h,Color c,int xs,int ys)
   {
-
-
-
-
+    super(x,y,w,h,c,xs,ys);
   }
 
   public Color randomColor()
   {
-    int r = 0;          //use Math.random()
-    int g = 0;
-    int b = 0;
+    int r = 256*Math.random();
+    int g = 256*Math.random();
+    int b = 256*Math.random();
     return new Color(r,g,b);
   }
 
-  public void moveAndDraw(Graphics window)
+  public void colorChangeMoveDraw(Graphics window)
   {
-
-
-
-
+    setColor(randomColor());
+    moveAndDraw(window);
   }
 }
