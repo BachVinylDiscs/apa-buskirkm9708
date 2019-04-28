@@ -1,4 +1,4 @@
-package ponglab.act4;
+package ponglab.act5;
 
 public interface Collidable<T>
 {
