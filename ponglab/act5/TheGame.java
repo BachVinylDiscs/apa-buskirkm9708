@@ -1,4 +1,4 @@
-//package ponglab.act4;
+//package ponglab.act5;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
@@ -17,7 +17,7 @@ public class TheGame extends JFrame
     super("PONG");
     setSize(WIDTH,HEIGHT);
 
-    Pong game = new Pong();
+    Pong game = new Pong(WIDTH,HEIGHT);
 
     ((Component)game).setFocusable(true);
     getContentPane().add(game);
