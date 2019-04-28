@@ -10,19 +10,11 @@ import java.awt.Graphics;
 public class Paddle extends Block
 {
   //instance variables
-  private int dimX;
-  private int dimY;
   private int speed;
 
-  public Paddle()
+  public Paddle(int xd,int yd,int x,int y,int w,int h,Color c,int s)
   {
-    super();
-    speed=1;
-  }
-
-  public Paddle(int x,int y,int w,int h,Color c,int s)
-  {
-    super(x,y,w,h,c);
+    super(xd,yd,x,y,w,h,c);
     speed=s;
   }
 
