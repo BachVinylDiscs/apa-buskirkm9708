@@ -126,7 +126,7 @@ public class Picture extends SimplePicture
 	int g=(up.getGreen()+upleft.getGreen()+left.getGreen()+downleft.getGreen()+down.getGreen()+downright.getGreen()+right.getGreen()+upright.getGreen())/8;
 	int b=(up.getBlue()+upleft.getBlue()+left.getBlue()+downleft.getBlue()+down.getBlue()+downright.getBlue()+right.getBlue()+upright.getBlue())/8;
 	averageColor=new Color(r,g,b);
-	pixels[row][col].setColor(averageColor);
+        pixels[row][col].setColor(averageColor);
       }
     }
   }
