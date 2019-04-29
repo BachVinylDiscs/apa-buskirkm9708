@@ -10,7 +10,6 @@ CLASSES = \
 	Locatable.java \
 	Ball.java \
 	BlinkyBall.java \
-	SpeedyBall.java \
 	Paddle.java \
 	Pong.java \
 	Score.java \
