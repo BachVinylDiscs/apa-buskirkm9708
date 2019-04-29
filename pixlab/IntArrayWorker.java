@@ -100,5 +100,39 @@ public class IntArrayWorker
       }
     }
   }
- 
+
+  public int getCount(int x)
+  {
+    int count=0;
+    for(int[] row:matrix){
+      for(int num:row){
+	if(num==x){
+	  count++;
+	}
+      }
+    }
+    return count;
+  }
+
+  public int getLargest()
+  {
+    int result=0;
+    for(int[] row:matrix){
+      for(int i=0;i<row.length;i++){
+	if(row[i]>result){
+	  result=row[i];
+	}
+      }
+    }
+    return result;
+  }
+
+  public int getColTotal(int x)
+  {
+    int sum=0;
+    for(int[] row:matrix){
+      sum+=row[x];
+    }
+    return sum;
+  }
 }

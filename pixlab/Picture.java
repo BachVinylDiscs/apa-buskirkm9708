@@ -100,6 +100,74 @@ public class Picture extends SimplePicture
     }
   }
 
+  public void keepOnlyBlue()
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    for(Pixel[] row:pixels)
+    {
+      for(Pixel pix:row)
+      {
+	pix.setRed(0);
+	pix.setGreen(0);
+      }
+    }
+  }
+
+  public void keepOnlyRed()
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    for(Pixel[] row:pixels)
+    {
+      for(Pixel pix:row)
+      {
+	pix.setGreen(0);
+	pix.setBlue(0);
+      }
+    }
+  }
+
+  public void keepOnlyGreen()
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    for(Pixel[] row:pixels){
+      for(Pixel pix:row)
+      {
+	pix.setRed(0);
+	pix.setBlue(0);
+      }
+    }
+  }
+
+  public void negate()
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    for(Pixel[] row:pixels)
+    {
+      for(Pixel pix:row)
+      {
+	pix.setRed(255-pix.getRed());
+	pix.setGreen(255-pix.getGreen());
+	pix.setBlue(255-pix.getBlue());
+      }
+    }
+  }
+
+  public void grayscale()
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    int avg=0;
+    for(Pixel[] row:pixels)
+    {
+      for(Pixel pix:row)
+      {
+	avg=(int)((pix.getRed()+pix.getGreen()+pix.getBlue())/3);
+	pix.setRed(avg);
+	pix.setGreen(avg);
+	pix.setBlue(avg);
+      }
+    }
+  }
+
   public void blur(int x,int y,int w,int h)
   {
     Pixel[][] pixels=this.getPixels2D();

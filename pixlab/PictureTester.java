@@ -18,7 +18,7 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
-  
+
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
