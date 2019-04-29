@@ -1,4 +1,4 @@
-package ponglab.act5;
+//package ponglab.act5;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
@@ -9,7 +9,7 @@ import java.awt.Graphics;
 
 public class Wall extends Block
 {
-  public Wall(int x,int y,int w,int h,int col)
+  public Wall(int x,int y,int w,int h,Color col)
   {
     super(x,y,w,h,col);
   }
