@@ -92,6 +92,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    testBlur(185,160,20,20,2);
+    testBlur(180,160,25,25,10);
   }
 }
