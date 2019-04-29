@@ -100,10 +100,9 @@ public class Picture extends SimplePicture
     }
   }
 
-  public static void blur(int x,int y,int w,int h)
+  public void blur(int x,int y,int w,int h)
   {
     Pixel[][] pixels=this.getPixels2D();
-    Pixel center=null;
     Pixel up=null;
     Pixel upleft=null;
     Pixel left=null;
@@ -115,7 +114,6 @@ public class Picture extends SimplePicture
     Color averageColor=null;
     for(int row=y+1;row<y+h-1;y++){
       for(int col=x+1;col<x+w-1;x++){
-        center=pixels[row][col];
 	up=pixels[row-1][col];
 	upleft=pixels[row-1][col-1];
 	left=pixels[row][col-1];
@@ -128,7 +126,7 @@ public class Picture extends SimplePicture
 	int g=(up.getGreen()+upleft.getGreen()+left.getGreen()+downleft.getGreen()+down.getGreen()+downright.getGreen()+right.getGreen()+upright.getGreen())/8;
 	int b=(up.getBlue()+upleft.getBlue()+left.getBlue()+downleft.getBlue()+down.getBlue()+downright.getBlue()+right.getBlue()+upright.getBlue())/8;
 	averageColor=new Color(r,g,b);
-	center.setColor(averageColor);
+	pixels[row][col].setColor(averageColor);
       }
     }
   }
@@ -258,10 +256,10 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+    Picture redMoto = new Picture("redMotorcycle.jpg");
+    redMoto.blur(185,160,20,20);
+    redMoto.blur(185,160,20,20);
+    redMoto.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this

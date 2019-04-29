@@ -32,7 +32,7 @@ public class PictureTester
   public static void testMirrorTemple()
   {
     Picture temple = new Picture("temple.jpg");
-    temple.explore();
+    //temple.explore();
     temple.mirrorTemple();
     temple.explore();
   }
@@ -55,7 +55,7 @@ public class PictureTester
   
   public static void testBlur(int x,int y,int w,int h,int n)
   { 
-    Picture redMoto = new Picture("beach.jpg");
+    Picture redMoto = new Picture("redMotorcycle.jpg");
     for (int i = 0; i<n; i++){
       redMoto.blur(x,y,w,h);
     }
@@ -92,6 +92,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    testBlur(100,100,100,100,1);
+    testBlur(185,160,20,20,2);
   }
 }
