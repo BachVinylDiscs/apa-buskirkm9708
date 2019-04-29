@@ -18,9 +18,9 @@ class BlinkyBall extends Ball
 
   public Color randomColor()
   {
-    int r = 256*Math.random();
-    int g = 256*Math.random();
-    int b = 256*Math.random();
+    int r = (int)(256*Math.random());
+    int g = (int)(256*Math.random());
+    int b = (int)(256*Math.random());
     return new Color(r,g,b);
   }
 
