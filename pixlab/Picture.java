@@ -1,4 +1,4 @@
-package pixlab;
+//package pixlab;
 
 import java.awt.*;
 import java.awt.font.*;
@@ -99,7 +99,40 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+
+  public static void blur(int x,int y,int w,int h)
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    Pixel center=null;
+    Pixel up=null;
+    Pixel upleft=null;
+    Pixel left=null;
+    Pixel downleft=null;
+    Pixel down=null;
+    Pixel downright=null;
+    Pixel right=null;
+    Pixel upright=null;
+    Color averageColor=null;
+    for(int row=y+1;row<y+h-1;y++){
+      for(int col=x+1;col<x+w-1;x++){
+        center=pixels[row][col];
+	up=pixels[row-1][col];
+	upleft=pixels[row-1][col-1];
+	left=pixels[row][col-1];
+	downleft=pixels[row+1][col-1];
+	down=pixels[row+1][col];
+	downright=pixels[row+1][col+1];
+	right=pixels[row][col+1];
+	upright=pixels[row-1][col+1];
+        int r=(up.getRed()+upleft.getRed()+left.getRed()+downleft.getRed()+down.getRed()+downright.getRed()+right.getRed()+upright.getRed())/8;
+	int g=(up.getGreen()+upleft.getGreen()+left.getGreen()+downleft.getGreen()+down.getGreen()+downright.getGreen()+right.getGreen()+upright.getGreen())/8;
+	int b=(up.getBlue()+upleft.getBlue()+left.getBlue()+downleft.getBlue()+down.getBlue()+downright.getBlue()+right.getBlue()+upright.getBlue())/8;
+	averageColor=new Color(r,g,b);
+	center.setColor(averageColor);
+      }
+    }
+  }
+
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

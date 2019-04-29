@@ -1,4 +1,4 @@
-package pixlab;
+//package pixlab;
 
 public class IntArrayWorker
 {

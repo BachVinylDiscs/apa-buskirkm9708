@@ -1,4 +1,4 @@
-package pixlab;
+//package pixlab;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;

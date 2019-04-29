@@ -1,4 +1,4 @@
-package pixlab;
+//package pixlab;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

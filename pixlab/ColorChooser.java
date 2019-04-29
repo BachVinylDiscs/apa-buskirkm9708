@@ -1,4 +1,4 @@
-package pixlab;
+//package pixlab;
 
 import javax.swing.JColorChooser;
 import javax.swing.JFrame;

@@ -1,4 +1,4 @@
-package pixlab;
+//package pixlab;
 
 /**
  * This class contains class (static) methods
