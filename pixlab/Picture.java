@@ -307,7 +307,7 @@ public class Picture extends SimplePicture
       for (int col = 13; col < mirrorPoint; col++)
       {
         count++;
-        leftPixel = pixels[row][col];      
+        leftPixel = pixels[row][col];
         rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }

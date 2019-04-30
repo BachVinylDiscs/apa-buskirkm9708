@@ -105,7 +105,7 @@ public class PictureTester
   public static void testMirrorTemple()
   {
     Picture temple = new Picture("temple.jpg");
-    //temple.explore();
+    temple.explore();
     temple.mirrorTemple();
     temple.explore();
   }
