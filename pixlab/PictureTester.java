@@ -2,11 +2,11 @@
 
 /**
  * This class contains class (static) methods
- * that will help you test the Picture class 
+ * that will help you test the Picture class
  * methods.  Uncomment the methods and the code
  * in the main to test.
- * 
- * @author Barbara Ericson 
+ *
+ * @author Barbara Ericson
  */
 public class PictureTester
 {
@@ -24,35 +24,42 @@ public class PictureTester
     beach.keepOnlyBlue();
     beach.explore();
   }
-  
+
   public static void testKeepOnlyRed()
   {
     Picture beach = new Picture("beach.jpg");
     beach.keepOnlyRed();
     beach.explore();
   }
-  
+
   public static void testKeepOnlyGreen()
   {
     Picture beach = new Picture("beach.jpg");
     beach.keepOnlyGreen();
     beach.explore();
   }
-  
+
   public static void testNegate()
   {
     Picture beach = new Picture("beach.jpg");
     beach.negate();
     beach.explore();
   }
-  
+
   public static void testGrayscale()
   {
     Picture beach = new Picture("beach.jpg");
     beach.grayscale();
     beach.explore();
   }
-  
+
+  public static void testFixUnderwater()
+  {
+    Picture water = new Picture("water.jpg");
+    water.fixUnderwater();
+    water.explore();
+  }
+
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -110,7 +117,7 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    //testFixUnderwater();
+    testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
@@ -126,6 +133,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    testBlur(180,160,25,25,10);
+    //testBlur(180,160,25,25,10);
   }
 }

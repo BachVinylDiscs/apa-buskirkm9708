@@ -168,6 +168,11 @@ public class Picture extends SimplePicture
     }
   }
 
+  public void fixUnderwater()
+  {
+    grayscale();
+  }
+
   public void blur(int x,int y,int w,int h)
   {
     Pixel[][] pixels=this.getPixels2D();
