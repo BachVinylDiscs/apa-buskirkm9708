@@ -315,6 +315,26 @@ public class Picture extends SimplePicture
     System.out.println(count);
   }
   
+  public void mirrorArms()
+  {
+    int mirrorRow=192;
+    Pixel topPixel=null;
+    Pixel bottomPixel=null;
+    Pixel[][] pixels=this.getPixels2D();
+    for(int row=158;row<mirrorRow;row++){
+      for(int col=103;col<170;col++){
+        topPixel=pixels[row][col];
+	bottomPixel=pixels[2*mirrorPoint-row][col];
+	bottomPixel.setColor(topPixel.getColor());
+      }
+      for(int col=239;col<295;col++){
+        topPixel=pixels[row][col];
+	bottomPixel=pixels[2*mirrorPoint-row][col];
+	bottomPixel.setColor(getColor());
+      }
+    }
+  }
+  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
