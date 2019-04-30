@@ -180,8 +180,8 @@ public class Picture extends SimplePicture
     Pixel right=null;
     Pixel upright=null;
     Color averageColor=null;
-    for(int row=y+1;row<y+h-1;row++){
-      for(int col=x+1;col<x+w-1;col++){
+    for(int row=x+1;row<x+w-1;row++){
+      for(int col=y+1;col<y+h-1;col++){
 	up=pixels[row-1][col];
 	upleft=pixels[row-1][col-1];
 	left=pixels[row][col-1];
