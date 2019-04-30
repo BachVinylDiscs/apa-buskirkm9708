@@ -343,8 +343,8 @@ public class Picture extends SimplePicture
     Pixel[][] pixels=this.getPixels2D();
     for(int row=235;row<325;row++){
       for(int col=237;col<347;col++){
-        rightPixel=[row][col];
-	leftPixel=[row][2*mirrorPoint-col];
+        rightPixel=pixels[row][col];
+	leftPixel=pixels[row][2*mirrorCol-col];
 	leftPixel.setColor(rightPixel.getColor());
       }
     }
