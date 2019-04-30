@@ -68,7 +68,7 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
-  
+
   public static void testMirrorVerticalRightToLeft()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
@@ -76,7 +76,7 @@ public class PictureTester
     caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
   }
-  
+
   public static void testMirrorHorizontal()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
@@ -84,7 +84,7 @@ public class PictureTester
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
   }
-  
+
   public static void testMirrorHorizontalBotToTop()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
@@ -92,7 +92,7 @@ public class PictureTester
     caterpillar.mirrorHorizontalBotToTop();
     caterpillar.explore();
   }
-  
+
   public static void testMirrorDiagonal()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
@@ -100,7 +100,7 @@ public class PictureTester
     caterpillar.mirrorDiagonal();
     caterpillar.explore();
   }
-  
+
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -109,7 +109,14 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
-  
+
+  public static void testMirrorArms()
+  {
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.mirrorArms();
+    snowman.explore();
+  }
+
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -117,7 +124,7 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
-  
+
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -125,9 +132,9 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+
   public static void testBlur(int x,int y,int w,int h,int n)
-  { 
+  {
     Picture redMoto = new Picture("redMotorcycle.jpg");
     for (int i = 0; i<n; i++){
       redMoto.blur(x,y,w,h);
@@ -135,7 +142,7 @@ public class PictureTester
     redMoto.explore();
   }
 
-  
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -155,8 +162,8 @@ public class PictureTester
     //testMirrorHorizontal();
     //testMirrorHorizontalBotToTop();
     //testMirrorDiagonal();
-    testMirrorTemple();
-    //testMirrorArms();
+    //testMirrorTemple();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();

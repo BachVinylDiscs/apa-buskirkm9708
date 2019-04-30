@@ -324,13 +324,13 @@ public class Picture extends SimplePicture
     for(int row=158;row<mirrorRow;row++){
       for(int col=103;col<170;col++){
         topPixel=pixels[row][col];
-	bottomPixel=pixels[2*mirrorPoint-row][col];
+	bottomPixel=pixels[2*mirrorRow-row][col];
 	bottomPixel.setColor(topPixel.getColor());
       }
       for(int col=239;col<295;col++){
         topPixel=pixels[row][col];
-	bottomPixel=pixels[2*mirrorPoint-row][col];
-	bottomPixel.setColor(getColor());
+	bottomPixel=pixels[2*mirrorRow-row][col];
+	bottomPixel.setColor(topPixel.getColor());
       }
     }
   }
