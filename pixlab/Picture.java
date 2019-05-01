@@ -100,19 +100,45 @@ public class Picture extends SimplePicture
     }
   }
 
-  public void keepOnlyBlue()
+  public void keepOnlyRed(int r1,int r2,int c1,int c2)
   {
     Pixel[][] pixels=this.getPixels2D();
-    for(Pixel[] row:pixels)
+    for(int i=r1;i<r2;i++)
     {
-      for(Pixel pix:row)
+      for(int j=c1;j<c2;j++)
       {
-	pix.setRed(0);
-	pix.setGreen(0);
+	pixels[i][j].setGreen(0);
+	pixels[i][j].setBlue(0);
       }
     }
   }
-
+  
+  public void keepOnlyGreen(int r1,int r2,int c1,int c2)
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    for(int i=r1;i<r2;i++)
+    {
+      for(int j=c1;j<c2;j++)
+      {
+	pixels[i][j].setRed(0);
+	pixels[i][j].setBlue(0);
+      }
+    }
+  }
+  
+  public void keepOnlyBlue(int r1,int r2,int c1,int c2)
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    for(int i=r1;i<r2;i++)
+    {
+      for(int j=c1;j<c2;j++)
+      {
+	pixels[i][j].setRed(0);
+	pixels[i][j].setGreen(0);
+      }
+    }
+  }
+  
   public void keepOnlyRed()
   {
     Pixel[][] pixels=this.getPixels2D();
@@ -134,6 +160,18 @@ public class Picture extends SimplePicture
       {
 	pix.setRed(0);
 	pix.setBlue(0);
+      }
+    }
+  }
+  
+  public void keepOnlyBlue()
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    for(Pixel[] row:pixels){
+      for(Pixel pix:row)
+      {
+	pix.setRed(0);
+	pix.setGreen(0);
       }
     }
   }
@@ -434,13 +472,13 @@ public class Picture extends SimplePicture
 
 /*  public void myCollage()
   {
-    Picture redbeach=new Picture("beach.jpg");
-    Picture greenbeach=new Picture("beach.jpg");
-    Picture bluebeach=new Picture("beach.jpg");
-    Picture graybeach=new Picture("beach.jpg");
-    this.copy(redbeach,0,0,240,320,0,0);
-    this.copy(bluebeach,0,320,240,640,0,320);
-    this.mirrorRectangle(redbeach
+    Picture beach=new Picture("beach.jpg");
+    Picture seagull=new Picture("seagull.jpg");
+    Picture swan=new Picture("swan.jpg");
+    this.copy(beach,0,0);
+    this.copy(seagull,
+    this.mirrorRectangle(0,0,240,320,false,240);
+    this.keep
 
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
