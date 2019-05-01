@@ -432,7 +432,7 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
 
-  public void myCollage()
+/*  public void myCollage()
   {
     Picture redbeach=new Picture("beach.jpg");
     Picture greenbeach=new Picture("beach.jpg");
