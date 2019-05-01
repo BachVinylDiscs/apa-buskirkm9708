@@ -373,26 +373,36 @@ public class Picture extends SimplePicture
     * @param startRow the start row to copy to
     * @param startCol the start col to copy to
     */
-  public void copy(Picture fromPic, 
-                 int startRow, int startCol)
+  public void copy(Picture fromPic, int startRow, int startCol)
   {
     Pixel fromPixel = null;
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
     Pixel[][] fromPixels = fromPic.getPixels2D();
-    for (int fromRow = 0, toRow = startRow; 
-         fromRow < fromPixels.length &&
-         toRow < toPixels.length; 
-         fromRow++, toRow++)
+    for (int fromRow=0,toRow=startRow;fromRow<fromPixels.length&&toRow<toPixels.length;fromRow++,toRow++)
     {
-      for (int fromCol = 0, toCol = startCol; 
-           fromCol < fromPixels[0].length &&
-           toCol < toPixels[0].length;  
-           fromCol++, toCol++)
+      for(int fromCol=0,toCol=startCol;fromCol<fromPixels[0].length&&toCol<toPixels[0].length;fromCol++,toCol++)
       {
         fromPixel = fromPixels[fromRow][fromCol];
         toPixel = toPixels[toRow][toCol];
         toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
+  
+  public void copy(Picture fromPic,int r1,int r2,int c1,int c2,int startRow,int startCol)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow=r1,toRow=startRow;fromRow<r2||toRow<toPixels.length;fromRow++,toRow++)
+    {
+      for (int fromCol=c1,toCol=startCol;fromCol<c2||toCol<toPixels[0].length;fromCol++,toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+	toPixel.setColor(fromPixel.getColor());
       }
     }   
   }
@@ -414,6 +424,13 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+  public void myCollage()
+  {
+    Picture redbeach=new Picture("beach.jpg");
+    Picture greenbeach=new Picture("beach.jpg");
+    Picture bluebeach=new Picture("beach.jpg");
+    Picture graybeach=new Picture("beach.jpg");
+    this.
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
