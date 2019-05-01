@@ -476,9 +476,14 @@ public class Picture extends SimplePicture
     Picture seagull=new Picture("seagull.jpg");
     Picture swan=new Picture("swan.jpg");
     this.copy(beach,0,0);
-    this.copy(seagull,
+    this.copy(seagull,234,234,320,345,390,475);
+    this.copy(swan,68,76,280,391,68,76);
     this.mirrorRectangle(0,0,240,320,false,240);
-    this.keep
+    this.keepOnlyRed(240,0,479,320);
+    this.mirrorRectangle(240,320,479,639,false,240);
+    this.keepOnlyGreen(0,320,240,639);
+    this.keepOnlyBlue(240,320,479,639);
+  }
 
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
