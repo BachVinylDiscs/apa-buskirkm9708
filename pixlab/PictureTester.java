@@ -11,13 +11,6 @@
 public class PictureTester
 {
   /** Method to test zeroBlue */
-
-  public static void testSwan()
-  {
-    Picture swan=new Picture("swan.jpg");
-    swan.explore();
-  }
-
   public static void testZeroBlue()
   {
     Picture beach = new Picture("beach.jpg");
@@ -146,6 +139,13 @@ public class PictureTester
     canvas.explore();
   }
 
+  public static void testMyCollage()
+  {
+    Picture collage = new Picture("640x480.jpg");
+    collage.myCollage();
+    collage.explore();
+  }
+
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -171,8 +171,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    //testSwan();
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -190,6 +189,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testMirrorRectangle();
     //testCollage();
+    testMyCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();

@@ -470,12 +470,12 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
 
-/*  public void myCollage()
+  public void myCollage()
   {
     Picture beach=new Picture("beach.jpg");
     Picture seagull=new Picture("seagull.jpg");
     Picture swan=new Picture("swan.jpg");
-    this.copy(beach,0,0);
+    this.copy(beach,0,0,478,638,0,0);
     this.copy(seagull,234,234,320,345,390,475);
     this.copy(swan,68,76,280,391,68,76);
     this.mirrorRectangle(0,0,240,320,false,240);
@@ -483,6 +483,7 @@ public class Picture extends SimplePicture
     this.mirrorRectangle(240,320,479,639,false,240);
     this.keepOnlyGreen(0,320,240,639);
     this.keepOnlyBlue(240,320,479,639);
+    this.write("collage.jpg");
   }
 
   /** Method to show large changes in color 
