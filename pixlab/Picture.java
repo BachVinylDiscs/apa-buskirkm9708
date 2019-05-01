@@ -11,27 +11,27 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
 /**
  * A class that represents a picture.  This class inherits from 
  * SimplePicture and allows the student to add functionality to
- * the Picture class.  
- * 
+ * the Picture class.
+ *
  * @author Barbara Ericson ericson@cc.gatech.edu
  */
-public class Picture extends SimplePicture 
+public class Picture extends SimplePicture
 {
   ///////////////////// constructors //////////////////////////////////
-  
+
   /**
-   * Constructor that takes no arguments 
+   * Constructor that takes no arguments
    */
   public Picture ()
   {
     /* not needed but use it to show students the implicit call to super()
-     * child constructors always call a parent constructor 
+     * child constructors always call a parent constructor
      */
-    super();  
+    super();
   }
-  
+
   /**
-   * Constructor that takes a file name and creates the picture 
+   * Constructor that takes a file name and creates the picture
    * @param fileName the name of the file to create the picture from
    */
   public Picture(String fileName)
@@ -39,7 +39,7 @@ public class Picture extends SimplePicture
     // let the parent class handle this fileName
     super(fileName);
   }
-  
+
   /**
    * Constructor that takes the width and height
    * @param height the height of the desired picture
@@ -50,9 +50,9 @@ public class Picture extends SimplePicture
     // let the parent class handle this width and height
     super(width,height);
   }
-  
+
   /**
-   * Constructor that takes a picture and creates a 
+   * Constructor that takes a picture and creates a
    * copy of that picture
    * @param copyPicture the picture to copy
    */
@@ -61,7 +61,7 @@ public class Picture extends SimplePicture
     // let the parent class do the copy
     super(copyPicture);
   }
-  
+
   /**
    * Constructor that takes a buffered image
    * @param image the buffered image to use
@@ -70,9 +70,9 @@ public class Picture extends SimplePicture
   {
     super(image);
   }
-  
+
   ////////////////////// methods ///////////////////////////////////////
-  
+
   /**
    * Method to return a string with information about this picture.
    * @return a string with information about the picture such as fileName,
@@ -80,13 +80,13 @@ public class Picture extends SimplePicture
    */
   public String toString()
   {
-    String output = "Picture, filename " + getFileName() + 
-      " height " + getHeight() 
+    String output = "Picture, filename " + getFileName() +
+      " height " + getHeight()
       + " width " + getWidth();
     return output;
-    
+
   }
-  
+
   /** Method to set the blue to 0 */
   public void zeroBlue()
   {
@@ -204,7 +204,7 @@ public class Picture extends SimplePicture
     }
   }
 
-  /** Method that mirrors the picture around a 
+  /** Method that mirrors the picture around a
     * vertical mirror in the center of the picture
     * from left to right */
   public void mirrorVertical()
@@ -221,9 +221,9 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row][width - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
       }
-    } 
+    }
   }
-  
+
   public void mirrorVerticalRightToLeft()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -238,9 +238,9 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row][width - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
       }
-    } 
+    }
   }
-  
+
   public void mirrorHorizontal()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -257,7 +257,7 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+
   public void mirrorHorizontalBotToTop()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -274,7 +274,7 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+
   public void mirrorDiagonal()
   {
     Pixel[][] pixels=this.getPixels2D();
@@ -290,7 +290,7 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
@@ -299,7 +299,7 @@ public class Picture extends SimplePicture
     Pixel rightPixel = null;
     int count = 0;
     Pixel[][] pixels = this.getPixels2D();
-    
+
     // loop through the rows
     for (int row = 27; row < 97; row++)
     {
@@ -314,7 +314,7 @@ public class Picture extends SimplePicture
     }
     System.out.println(count);
   }
-  
+
   public void mirrorArms()
   {
     int mirrorRow=192;
@@ -334,7 +334,7 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+
   public void mirrorGull()
   {
     int mirrorCol=220;
@@ -349,23 +349,31 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+
   public void mirrorRectangle(int x1,int y1,int x2,int y2,boolean vertical,int m)
   {
     Pixel from=null;
     Pixel to=null;
     Pixel[][] pixels=this.getPixels2D();
     if(vertical){
-      for(int row=y1;row<y2;row++){
-        for(int col=x1;col<x2;col++){
+      for(int row=x1;row<x2;row++){
+        for(int col=y1;col<y2;col++){
           from=pixels[row][col];
-	  to=pixels[row][2*m-col];
+	  to=pixels[row][2*m-col-1];
+	  to.setColor(from.getColor());
+	}
+      }
+    }else{
+      for(int row=x1;row<x2;row++){
+	for(int col=y1;col<y2;col++){
+	  from=pixels[row][col];
+	  to=pixels[2*m-row-1][col];
 	  to.setColor(from.getColor());
 	}
       }
     }
   }
-  
+
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -387,9 +395,9 @@ public class Picture extends SimplePicture
         toPixel = toPixels[toRow][toCol];
         toPixel.setColor(fromPixel.getColor());
       }
-    }   
+    }
   }
-  
+
   public void copy(Picture fromPic,int r1,int r2,int c1,int c2,int startRow,int startCol)
   {
     Pixel fromPixel = null;
@@ -404,7 +412,7 @@ public class Picture extends SimplePicture
         toPixel = toPixels[toRow][toCol];
 	toPixel.setColor(fromPixel.getColor());
       }
-    }   
+    }
   }
 
   /** Method to create a collage of several pictures */
@@ -423,15 +431,17 @@ public class Picture extends SimplePicture
     this.mirrorVertical();
     this.write("collage.jpg");
   }
-  
+
   public void myCollage()
   {
     Picture redbeach=new Picture("beach.jpg");
     Picture greenbeach=new Picture("beach.jpg");
     Picture bluebeach=new Picture("beach.jpg");
     Picture graybeach=new Picture("beach.jpg");
-    this.
-  
+    this.copy(redbeach,0,0,240,320,0,0);
+    this.copy(bluebeach,0,320,240,640,0,320);
+    this.mirrorRectangle(redbeach
+
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */

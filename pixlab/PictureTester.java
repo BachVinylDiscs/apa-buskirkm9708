@@ -124,6 +124,13 @@ public class PictureTester
     seagull.explore();
   }
 
+  public static void testMirrorRectangle()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.mirrorRectangle(0,0,240,640,false,240);
+    beach.explore();
+  }
+
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -171,8 +178,9 @@ public class PictureTester
     //testMirrorDiagonal();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
+    testMirrorRectangle();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
