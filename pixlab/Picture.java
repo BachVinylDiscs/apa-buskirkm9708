@@ -350,6 +350,22 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void mirrorRectangle(int x1,int y1,int x2,int y2,boolean vertical,int m)
+  {
+    Pixel from=null;
+    Pixel to=null;
+    Pixel[][] pixels=this.getPixels2D();
+    if(vertical){
+      for(int row=y1;row<y2;row++){
+        for(int col=x1;col<x2;col++){
+          from=pixels[row][col];
+	  to=pixels[row][2*m-col];
+	  to.setColor(from.getColor());
+	}
+      }
+    }
+  }
+  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
