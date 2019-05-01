@@ -100,7 +100,7 @@ public class Picture extends SimplePicture
     }
   }
 
-  public void keepOnlyRed(int r1,int r2,int c1,int c2)
+  public void keepOnlyRed(int r1,int c1,int r2,int c2)
   {
     Pixel[][] pixels=this.getPixels2D();
     for(int i=r1;i<r2;i++)
@@ -113,7 +113,7 @@ public class Picture extends SimplePicture
     }
   }
   
-  public void keepOnlyGreen(int r1,int r2,int c1,int c2)
+  public void keepOnlyGreen(int r1,int c1,int r2,int c2)
   {
     Pixel[][] pixels=this.getPixels2D();
     for(int i=r1;i<r2;i++)
@@ -126,7 +126,7 @@ public class Picture extends SimplePicture
     }
   }
   
-  public void keepOnlyBlue(int r1,int r2,int c1,int c2)
+  public void keepOnlyBlue(int r1,int c1,int r2,int c2)
   {
     Pixel[][] pixels=this.getPixels2D();
     for(int i=r1;i<r2;i++)
@@ -442,9 +442,9 @@ public class Picture extends SimplePicture
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
     Pixel[][] fromPixels = fromPic.getPixels2D();
-    for (int fromRow=r1,toRow=startRow;fromRow<r2||toRow<toPixels.length;fromRow++,toRow++)
+    for (int fromRow=r1,toRow=startRow;fromRow<r2&&toRow<toPixels.length;fromRow++,toRow++)
     {
-      for (int fromCol=c1,toCol=startCol;fromCol<c2||toCol<toPixels[0].length;fromCol++,toCol++)
+      for (int fromCol=c1,toCol=startCol;fromCol<c2&&toCol<toPixels[0].length;fromCol++,toCol++)
       {
         fromPixel = fromPixels[fromRow][fromCol];
         toPixel = toPixels[toRow][toCol];
@@ -475,12 +475,12 @@ public class Picture extends SimplePicture
     Picture beach=new Picture("beach.jpg");
     Picture seagull=new Picture("seagull.jpg");
     Picture swan=new Picture("swan.jpg");
-    this.copy(beach,0,0,478,638,0,0);
-    this.copy(seagull,234,234,320,345,390,475);
-    this.copy(swan,68,76,280,391,68,76);
+    this.copy(beach,0,0);
+    this.copy(seagull,234,320,234,345,390,475);
+    this.copy(swan,68,280,76,391,68,76);
     this.mirrorRectangle(0,0,240,320,false,240);
-    this.keepOnlyRed(240,0,479,320);
     this.mirrorRectangle(240,320,479,639,false,240);
+    this.keepOnlyRed(240,0,479,320);
     this.keepOnlyGreen(0,320,240,639);
     this.keepOnlyBlue(240,320,479,639);
     this.write("collage.jpg");
