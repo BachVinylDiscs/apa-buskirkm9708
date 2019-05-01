@@ -11,6 +11,13 @@
 public class PictureTester
 {
   /** Method to test zeroBlue */
+
+  public static void testSwan()
+  {
+    Picture swan=new Picture("swan.jpg");
+    swan.explore();
+  }
+
   public static void testZeroBlue()
   {
     Picture beach = new Picture("beach.jpg");
@@ -164,7 +171,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    //testZeroBlue();
+    //testSwan();
+    testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -180,7 +188,7 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testMirrorRectangle();
+    //testMirrorRectangle();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
