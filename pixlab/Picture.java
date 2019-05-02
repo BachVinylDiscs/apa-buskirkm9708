@@ -575,19 +575,19 @@ public class Picture extends SimplePicture
 	  downleft=pixels[row+1][col-1];
 	  dl=Math.abs((int)((downleft.getRed()+downleft.getGreen()+downleft.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(row<pixels.length){
+	if(row<pixels.length-1){
 	  down=pixels[row+1][col];
 	  d=Math.abs((int)((down.getRed()+down.getGreen()+down.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(row<pixels.length&&col<pixels[row].length){
+	if(row<pixels.length-1&&col<pixels[row].length-1){
 	  downright=pixels[row+1][col+1];
 	  dr=Math.abs((int)((downright.getRed()+downright.getGreen()+downright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(col<pixels[row].length){
+	if(col<pixels[row].length-1){
 	  right=pixels[row][col+1];
 	  r=Math.abs((int)((right.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(row>0&&col<pixels[row].length){
+	if(row>0&&col<pixels[row].length-1){
 	  upright=pixels[row-1][col+1];
 	  ur=Math.abs((int)((upright.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
