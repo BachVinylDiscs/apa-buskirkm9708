@@ -56,7 +56,7 @@ public class PictureTester
   public static void testFixUnderwater()
   {
     Picture water = new Picture("water.jpg");
-    water.fixUnderwater();
+//    water.fixUnderwater();
     water.explore();
   }
 
@@ -191,7 +191,7 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    //testFixUnderwater();
+    testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontal();
@@ -207,7 +207,7 @@ public class PictureTester
     //testCopy();
     //testEdgeDetectionHoriz();
     //testEdgeDetectionVert
-    testEdgeDetection2();
+    //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
