@@ -534,6 +534,52 @@ public class Picture extends SimplePicture
     }
   } 
   
+  public void blur(int x,int y,int w,int h)
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    Pixel center=null;
+    Pixel up=null;
+    Pixel upleft=null;
+    Pixel left=null;
+    Pixel downleft=null;
+    Pixel down=null;
+    Pixel downright=null;
+    Pixel right=null;
+    Pixel upright=null;
+    int u=0;
+    int ul=0;
+    int l=0;
+    int dl=0;
+    int d=0;
+    int dr=0;
+    int r=0;
+    int ur=0;
+    int avg=0;
+    for(int row=x+1;row<x+w-1;row++){
+      for(int col=y+1;col<y+h-1;col++){
+        center=pixels[row][col];
+	up=pixels[row-1][col];
+	upleft=pixels[row-1][col-1];
+	left=pixels[row][col-1];
+	downleft=pixels[row+1][col-1];
+	down=pixels[row+1][col];
+	downright=pixels[row+1][col+1];
+	right=pixels[row][col+1];
+	upright=pixels[row-1][col+1];
+	u=Math.abs((int)((up.getRed()+up.getGreen()+up.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	ul=Math.abs((int)((upleft.getRed()+upleft.getGreen()+upleft.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	l=Math.abs((int)((left.getRed()+left.getGreen()+left.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	dl=Math.abs((int)((downleft.getRed()+downleft.getGreen()+downleft.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	d=Math.abs((int)((down.getRed()+down.getGreen()+down.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	dr=Math.abs((int)((downright.getRed()+downright.getGreen()+downright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	r=Math.abs((int)((right.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	ur=Math.abs((int)((upright.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	avg=(int)((u+ul+l+dl+d+dr+r+ur)/8);
+	center.setColor(new Color(avg,avg,avg));
+      }
+    }
+  }
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
