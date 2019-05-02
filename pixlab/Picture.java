@@ -571,23 +571,23 @@ public class Picture extends SimplePicture
 	  left=pixels[row][col-1];
 	  l=Math.abs((int)((left.getRed()+left.getGreen()+left.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(row<pixels.length-1&&col>0){
+	if(row<pixels.length&&col>0){
 	  downleft=pixels[row+1][col-1];
 	  dl=Math.abs((int)((downleft.getRed()+downleft.getGreen()+downleft.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(row<pixels.length-1){
+	if(row<pixels.length){
 	  down=pixels[row+1][col];
 	  d=Math.abs((int)((down.getRed()+down.getGreen()+down.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(row<pixels.length-1&&col<pixels[row].length-1){
+	if(row<pixels.length&&col<pixels[row].length){
 	  downright=pixels[row+1][col+1];
 	  dr=Math.abs((int)((downright.getRed()+downright.getGreen()+downright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(col<pixels[row].length-1){
+	if(col<pixels[row].length){
 	  right=pixels[row][col+1];
-	  r=Math.abs((int)((right.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
+	  r=Math.abs((int)((right.getRed()+right.getGreen()+right.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
-	if(row>0&&col<pixels[row].length-1){
+	if(row>0&&col<pixels[row].length){
 	  upright=pixels[row-1][col+1];
 	  ur=Math.abs((int)((upright.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	}
