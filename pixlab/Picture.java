@@ -574,7 +574,7 @@ public class Picture extends SimplePicture
 	dr=Math.abs((int)((downright.getRed()+downright.getGreen()+downright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	r=Math.abs((int)((right.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	ur=Math.abs((int)((upright.getRed()+upright.getGreen()+upright.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
-	avg=(int)((u+ul+l+dl+d+dr+r+ur)/8);
+	avg=255-(int)((u+ul+l+dl+d+dr+r+ur)/8);
 	center.setColor(new Color(avg,avg,avg));
       }
     }
