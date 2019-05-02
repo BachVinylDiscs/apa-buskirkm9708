@@ -509,6 +509,7 @@ public class Picture extends SimplePicture
         else
           leftPixel.setColor(Color.WHITE);
       }
+
     }
   }
   
@@ -534,7 +535,7 @@ public class Picture extends SimplePicture
     }
   } 
   
-  public void blur(int x,int y,int w,int h)
+  public void edgeDetection2()
   {
     Pixel[][] pixels=this.getPixels2D();
     Pixel center=null;
@@ -555,16 +556,24 @@ public class Picture extends SimplePicture
     int r=0;
     int ur=0;
     int avg=0;
-    for(int row=x+1;row<x+w-1;row++){
-      for(int col=y+1;col<y+h-1;col++){
+    for(int row=0;row<pixels.length;row++){
+      for(int col=0;col<pixels[row].length;col++){
         center=pixels[row][col];
-	up=pixels[row-1][col];
+	if(row>0)
+  	up=pixels[row-1][col];
+	if(row>0&&col>0)
 	upleft=pixels[row-1][col-1];
+	if(col>0)
 	left=pixels[row][col-1];
+	if(row<pixels.length-1&&col>0)
 	downleft=pixels[row+1][col-1];
+	if(row<pixels.length)
 	down=pixels[row+1][col];
+	if(row<pixels.length&&col<pixels[row].length)
 	downright=pixels[row+1][col+1];
+	if(col<pixels[row].length)
 	right=pixels[row][col+1];
+	if(row>0&&col<pixels[row].length)
 	upright=pixels[row-1][col+1];
 	u=Math.abs((int)((up.getRed()+up.getGreen()+up.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
 	ul=Math.abs((int)((upleft.getRed()+upleft.getGreen()+upleft.getBlue()-center.getRed()-center.getGreen()-center.getBlue())/3));
