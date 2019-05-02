@@ -160,7 +160,14 @@ public class PictureTester
     swan.edgeDetectionVert(10);
     swan.explore();
   }
-
+  
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection2();
+    swan.explore();
+  }
+  
   public static void testBlur(int x,int y,int w,int h,int n)
   {
     Picture redMoto = new Picture("redMotorcycle.jpg");
