@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Max Buskirk
 
 import java.io.*;
 import java.util.*;

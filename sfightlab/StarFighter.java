@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Max Buskirk
 
 import javax.swing.JFrame;
 import java.awt.Component;
