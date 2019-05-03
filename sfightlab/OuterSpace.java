@@ -34,6 +34,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     setBackground(Color.black);
 
     keys = new boolean[5];
+    ship = new Ship();
 
     //instantiate other instance variables
     //Ship, Alien
@@ -68,9 +69,24 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     graphToBack.setColor(Color.BLACK);
     graphToBack.fillRect(0,0,800,600);
 
-    if(keys[0] == true)
+    if(keys[0])
     {
-      ship.move("LEFT");
+      ship.move("w");
+    }
+
+    if(keys[1])
+    {
+      ship.move("e");
+    }
+
+    if(keys[2])
+    {
+      ship.move("n");
+    }
+
+    if(keys[3])
+    {
+      ship.move("s");
     }
 
     //add code to move Ship, Alien, etc.
