@@ -206,6 +206,16 @@ public class Picture extends SimplePicture
     }
   }
 
+  public void greyscaleLightness()
+  {
+    Pixel[][] pixels=this.getPixels2D();
+    int avg=0;
+    for(Pixel[] rows:pixels)
+    {
+      for(Pixel pix:row)
+      {
+	
+
   public void fixUnderwater()
   {
     Pixel[][] pixels=this.getPixels2D();
