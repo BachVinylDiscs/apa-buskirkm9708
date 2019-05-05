@@ -31,16 +31,7 @@ public class Ship extends MovingThing
 
   public Ship(int x, int y, int w, int h, int s)
   {
-<<<<<<< HEAD
     super(x, y, w, h);
-=======
-    this(x,y,w,h,10);
-  }
-
-  public Ship(int x,int y,int w,int h,int s)
-  {
-    super(x,y,w,h);
->>>>>>> fc7502eebbfb4afd4e8bab6a0c4240362bdb43ee
     speed=s;
     try
     {
