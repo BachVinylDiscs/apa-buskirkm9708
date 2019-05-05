@@ -19,23 +19,19 @@ public class Ship extends MovingThing
     this(10,10,10,10,10);
   }
 
-  public Ship(int x,int y)
+  public Ship(int x, int y)
   {
-    this(x,y,10,10,10);
+    //add code here
   }
 
-  public Ship(int x,int y,int s)
+  public Ship(int x, int y, int s)
   {
-    this(x,y,10,10,s);
+    //add code here
   }
 
-  public Ship(int x,int y,int w,int h)
+  public Ship(int x, int y, int w, int h, int s)
   {
-    this(x,y,w,h,10);
-
-  public Ship(int x,int y,int w,int h,int s)
-  {
-    super(x,y,w,h);
+    super(x, y, w, h);
     speed=s;
     try
     {
@@ -51,60 +47,26 @@ public class Ship extends MovingThing
 
   public void setSpeed(int s)
   {
-    speed=s;
+    //add more code
   }
 
   public int getSpeed()
   {
-    return speed;
+    return 0;
   }
 
-  public void move(String dir)
+  public void move(String direction)
   {
-    if(dir.equals("n")){
-      setY(getY()-1);
-    }
-
-    if(dir.equals("nw")){
-      setX(getX()-1);
-      setY(getY()-1);
-    }
-
-    if(dir.equals("w")){
-      setX(getX()-1);
-    }
-
-    if(dir.equals("sw")){
-      setX(getX()-1);
-      setY(getY()+1);
-    }
-
-    if(dir.equals("s")){
-      setY(getY()+1);
-    }
-
-    if(dir.equals("se")){
-      setX(getX()+1);
-      setY(getY()+1);
-    }
-
-    if(dir.equals("e")){
-      setX(getX()+1);
-    }
-
-    if(dir.equals("ne")){
-      setX(getX()+1);
-      setY(getY()-1);
-    }
+    //add code here
   }
 
-  public void draw(Graphics window)
+  public void draw( Graphics window )
   {
     window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
   }
 
   public String toString()
   {
-    return super.toString()+getSpeed();
+    return super.toString() + getSpeed();
   }
 }

@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name - Max Buskirk
+//Name -
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,72 +14,68 @@ public abstract class MovingThing implements Moveable
 
   public MovingThing()
   {
-    xPos=10;
-    yPos=10;
-    width=10;
-    height=10;
+    xPos = 10;
+    yPos = 10;
+    width = 10;
+    height = 10;
   }
 
-  public MovingThing(int x,int y)
+  public MovingThing(int x, int y)
   {
-    xPos=x;
-    yPos=y;
-    width=10;
-    height=10;
+    xPos = x;
+    yPos = y;
+    width = 10;
+    height = 10;
   }
 
-  public MovingThing(int x,int y,int w,int h)
+  public MovingThing(int x, int y, int w, int h)
   {
-    xPos=x;
-    yPos=y;
-    width=w;
-    height=h;
+    //add code here
   }
 
-  public void setPos(int x,int y)
+  public void setPos( int x, int y)
   {
-    xPos=x;
-    yPos=y;
+    //add code here
   }
 
   public void setX(int x)
   {
-    xPos=x;
+    //add code here
   }
 
   public void setY(int y)
   {
-    yPos=y;
+    //add code here
   }
 
   public int getX()
   {
-    return xPos;
+    return 0;   //finish this method
   }
 
   public int getY()
   {
-    return yPos;
+    return 0;  //finish this method
   }
 
   public void setWidth(int w)
   {
-    width=w;
+    //add code here
   }
 
   public void setHeight(int h)
   {
-    height=h;
+    //add code here
   }
 
   public int getWidth()
   {
-    return width;
+    return 0;  //finish this method
   }
 
   public int getHeight()
   {
-    return height;
+    return 0;  //finish this method
   }
 
   public abstract void move(String direction);
@@ -87,6 +83,6 @@ public abstract class MovingThing implements Moveable
 
   public String toString()
   {
-    return getX()+" "+getY()+" "+getWidth()+" "+getHeight();
+    return getX() + " " + getY() + " " + getWidth() + " " + getHeight();
   }
 }

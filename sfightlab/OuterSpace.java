@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name - Max Buskirk
+//Name -
 
 import java.awt.Color;
 import java.awt.Graphics;
