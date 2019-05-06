@@ -56,7 +56,12 @@ public class Alien extends MovingThing
 
   public void move(String dir)
   {
-    
+    if(dir.equals("LEFT"))
+      setX(getX()-1);
+    if(dir.equals("RIGHT"))
+      setX(getX()+1);
+    if(dir.equals("DOWN"))
+      setY(getY()+1);
   }
 
   public void draw( Graphics window )
