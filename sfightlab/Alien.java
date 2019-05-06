@@ -60,8 +60,6 @@ public class Alien extends MovingThing
       setX(getX()-1);
     if(dir.equals("RIGHT"))
       setX(getX()+1);
-    if(dir.equals("UP"))
-      setY(getY()-1);
     if(dir.equals("DOWN"))
       setY(getY()+1);
   }
