@@ -24,26 +24,25 @@ public class Ship extends MovingThing
     this(x,y,10,10,10);
   }
 
-  public Ship(int x, int y, int s)
+  public Ship(int x,int y,int s)
   {
     this(x,y,10,10,s);
   }
 
-  public Ship(int x, int y, int w, int h, int s)
+  public Ship(int x,int y,int w,int h,int s)
   {
-    super(x, y, w, h);
+    super(x,y,w,h);
     speed=s;
     try
     {
-      URL url = getClass().getResource("ship.jpg");
-      image = ImageIO.read(url);
+      URL url=getClass().getResource("ship.jpg");
+      image=ImageIO.read(url);
     }
     catch(Exception e)
     {
       //feel free to do something here
     }
   }
-
 
   public void setSpeed(int s)
   {
@@ -55,12 +54,19 @@ public class Ship extends MovingThing
     return speed;
   }
 
-  public void move(String direction)
+  public void move(String dir)
   {
-    //add code here
+    if(dir.equals("LEFT"))
+      setX(getX()-1);
+    if(dir.equals("RIGHT"))
+      setX(getX()+1);
+    if(dir.equals("UP"))
+      setY(getY()-1);
+    if(dir.equals("DOWN"))
+      setY(getY()+1);
   }
 
-  public void draw( Graphics window )
+  public void draw(Graphics window)
   {
     window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
   }
