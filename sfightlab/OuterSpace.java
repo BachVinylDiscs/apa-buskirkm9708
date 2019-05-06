@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
+  private int xDim;
+  private int yDim;
   private Ship ship;
   private Alien alienOne;
   private Alien alienTwo;
@@ -29,16 +31,17 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
   private boolean[] keys;
   private BufferedImage back;
 
-  public OuterSpace()
+  public OuterSpace(int x,int y)
   {
     setBackground(Color.black);
-
+    xDim=x;
+    yDim=y;
     keys = new boolean[5];
 
     //instantiate other instance variables
     //Ship, Alien
     
-    Ship ship=new Ship();
+    ship=new Ship(10,10,50,50,5);
     
     this.addKeyListener(this);
     new Thread(this).start();
@@ -68,26 +71,35 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     graphToBack.setColor(Color.BLUE);
     graphToBack.drawString("StarFighter ", 25, 50 );
     graphToBack.setColor(Color.BLACK);
-    graphToBack.fillRect(0,0,800,600);
-
-    if(keys[0] == true)
+    graphToBack.fillRect(0,0,xDim,yDim);
+    ship.draw(graphToBack);
+    if(ship.getX()>0)
     {
-      ship.move("LEFT");
+      if(keys[0])
+      {
+        ship.move("LEFT");
+      }
     }
-    
-    if(keys[1] == true)
+    if(ship.getX()+ship.getWidth()<xDim)
     {
-      ship.move("RIGHT");
+      if(keys[1])
+      {
+        ship.move("RIGHT");
+      }
     }
-    
-    if(keys[2] == true)
+    if(ship.getY()>0)
     {
-      ship.move("UP");
+      if(keys[2])
+      {
+        ship.move("UP");
+      }
     }
-    
-    if(keys[3] == true)
+    if(ship.getY()+2*ship.getHeight()<yDim)
     {
-      ship.move("DOWN");
+      if(keys[3])
+      {
+        ship.move("DOWN");
+      }
     }
 
     //add code to move Ship, Alien, etc.
