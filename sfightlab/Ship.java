@@ -19,14 +19,14 @@ public class Ship extends MovingThing
     this(10,10,10,10,10);
   }
 
-  public Ship(int x, int y)
+  public Ship(int x,int y)
   {
-    //add code here
+    this(x,y,10,10,10);
   }
 
   public Ship(int x, int y, int s)
   {
-    //add code here
+    this(x,y,10,10,s);
   }
 
   public Ship(int x, int y, int w, int h, int s)
@@ -47,12 +47,12 @@ public class Ship extends MovingThing
 
   public void setSpeed(int s)
   {
-    //add more code
+    speed=s;
   }
 
   public int getSpeed()
   {
-    return 0;
+    return speed;
   }
 
   public void move(String direction)
