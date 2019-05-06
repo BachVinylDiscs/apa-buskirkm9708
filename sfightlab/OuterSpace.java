@@ -42,7 +42,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     //Ship, Alien
     
     ship=new Ship(10,10,50,50,5);
-    
+    alienOne=new Alien(10,100,50,50,5);
+    alienTwo=new Alien(110,100,50,50,5);
     this.addKeyListener(this);
     new Thread(this).start();
 
@@ -73,32 +74,34 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     graphToBack.setColor(Color.BLACK);
     graphToBack.fillRect(0,0,xDim,yDim);
     ship.draw(graphToBack);
-    if(ship.getX()>0)
+    alienOne.draw(graphToBack);
+    alienTwo.draw(graphToBack);
+    if(alienOne.getX()>0)
     {
       if(keys[0])
       {
-        ship.move("LEFT");
+        alienOne.move("LEFT");
       }
     }
-    if(ship.getX()+ship.getWidth()<xDim)
+    if(alienOne.getX()+alienOne.getWidth()<xDim)
     {
       if(keys[1])
       {
-        ship.move("RIGHT");
+        alienOne.move("RIGHT");
       }
     }
-    if(ship.getY()>0)
-    {
-      if(keys[2])
-      {
-        ship.move("UP");
-      }
-    }
-    if(ship.getY()+2*ship.getHeight()<yDim)
+//    if(alienOne.getY()>0)
+  //  {
+    //  if(keys[2])
+  //    {
+    //    alienOne.move("UP");
+  //    }
+   // }
+    if(alienOne.getY()+2*alienOne.getHeight()<yDim)
     {
       if(keys[3])
       {
-        ship.move("DOWN");
+        alienOne.move("DOWN");
       }
     }
 
