@@ -21,12 +21,12 @@ public class Alien extends MovingThing
 
   public Alien(int x, int y)
   {
-    //add code here
+    this(x,y,10,10,10);
   }
 
   public Alien(int x, int y, int s)
   {
-    //add code here
+    this(x,y,10,10,s);
   }
 
   public Alien(int x, int y, int w, int h, int s)
@@ -46,17 +46,22 @@ public class Alien extends MovingThing
 
   public void setSpeed(int s)
   {
-    //add code
+    speed=s;
   }
 
   public int getSpeed()
   {
-    return 0;
+    return speed;
   }
 
-  public void move(String direction)
+  public void move(String dir)
   {
-    //add code here
+    if(dir.equals("LEFT"))
+      setX(getX()-1);
+    if(dir.equals("RIGHT"))
+      setX(getX()+1);
+    if(dir.equals("DOWN"))
+      setY(getY()+1);
   }
 
   public void draw( Graphics window )

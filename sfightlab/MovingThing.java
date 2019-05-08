@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name - Max Buskirk
+//Name -
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,18 +14,18 @@ public abstract class MovingThing implements Moveable
 
   public MovingThing()
   {
-    xPos=10;
-    yPos=10;
-    width=10;
-    height=10;
+    xPos = 10;
+    yPos = 10;
+    width = 10;
+    height = 10;
   }
 
   public MovingThing(int x,int y)
   {
-    xPos=x;
-    yPos=y;
-    width=10;
-    height=10;
+    xPos = x;
+    yPos = y;
+    width = 10;
+    height = 10;
   }
 
   public MovingThing(int x,int y,int w,int h)
@@ -87,6 +87,6 @@ public abstract class MovingThing implements Moveable
 
   public String toString()
   {
-    return getX()+" "+getY()+" "+getWidth()+" "+getHeight();
+    return getX() + " " + getY() + " " + getWidth() + " " + getHeight();
   }
 }

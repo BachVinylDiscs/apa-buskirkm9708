@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name - Max Buskirk
+//Name -
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
+  private int xDim;
+  private int yDim;
   private Ship ship;
   private Alien alienOne;
   private Alien alienTwo;
@@ -29,16 +31,19 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
   private boolean[] keys;
   private BufferedImage back;
 
-  public OuterSpace()
+  public OuterSpace(int x,int y)
   {
     setBackground(Color.black);
-
+    xDim=x;
+    yDim=y;
     keys = new boolean[5];
-    ship = new Ship();
 
     //instantiate other instance variables
     //Ship, Alien
-
+    
+    ship=new Ship(10,10,50,50,5);
+    alienOne=new Alien(10,100,50,50,5);
+    alienTwo=new Alien(110,100,50,50,5);
     this.addKeyListener(this);
     new Thread(this).start();
 
@@ -67,26 +72,37 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     graphToBack.setColor(Color.BLUE);
     graphToBack.drawString("StarFighter ", 25, 50 );
     graphToBack.setColor(Color.BLACK);
-    graphToBack.fillRect(0,0,800,600);
-
-    if(keys[0])
+    graphToBack.fillRect(0,0,xDim,yDim);
+    ship.draw(graphToBack);
+    alienOne.draw(graphToBack);
+    alienTwo.draw(graphToBack);
+    if(alienOne.getX()>0)
     {
-      ship.move("w");
+      if(keys[0])
+      {
+        alienOne.move("LEFT");
+      }
     }
-
-    if(keys[1])
+    if(alienOne.getX()+alienOne.getWidth()<xDim)
     {
-      ship.move("e");
+      if(keys[1])
+      {
+        alienOne.move("RIGHT");
+      }
     }
-
-    if(keys[2])
+//    if(alienOne.getY()>0)
+  //  {
+    //  if(keys[2])
+  //    {
+    //    alienOne.move("UP");
+  //    }
+   // }
+    if(alienOne.getY()+2*alienOne.getHeight()<yDim)
     {
-      ship.move("n");
-    }
-
-    if(keys[3])
-    {
-      ship.move("s");
+      if(keys[3])
+      {
+        alienOne.move("DOWN");
+      }
     }
 
     //add code to move Ship, Alien, etc.
