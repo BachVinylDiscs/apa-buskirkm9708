@@ -17,12 +17,12 @@ public class Ammo extends MovingThing
     this(0,0,0);
   }
 
-  public Ammo(int x, int y)
+  public Ammo(int x,int y)
   {
     this(x,y,0);
   }
 
-  public Ammo(int x, int y, int s)
+  public Ammo(int x,int y,int s)
   {
     super(x,y,10,10,s);
   }
@@ -37,19 +37,20 @@ public class Ammo extends MovingThing
     return speed;
   }
 
-  public void draw( Graphics window )
+  public void draw(Graphics window)
   {
-    //add code to draw the ammo
+    window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
   }
         
         
-  public void move( String direction )
+  public void move(String direction)
   {
-    //add code to draw the ammo
+    if(dir.equals("UP"))
+      setY(getY()-1);
   }
 
   public String toString()
   {
-    return "";
+    return super.toString() + getSpeed();
   }
 }
