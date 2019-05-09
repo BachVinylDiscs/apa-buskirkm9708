@@ -55,7 +55,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     paint(window);
   }
 
-  public void paint( Graphics window )
+  public void paint(Graphics window)
   {
     //set up the double buffering to make the game animation nice and smooth
     Graphics2D twoDGraph = (Graphics2D)window;
@@ -76,36 +76,35 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     ship.draw(graphToBack);
     alienOne.draw(graphToBack);
     alienTwo.draw(graphToBack);
-    if(alienOne.getX()>0)
+    if(ship.getX()>0)
     {
       if(keys[0])
       {
-        alienOne.move("LEFT");
+        ship.move("LEFT");
       }
     }
-    if(alienOne.getX()+alienOne.getWidth()<xDim)
+    if(ship.getX()+ship.getWidth()<xDim)
     {
       if(keys[1])
       {
-        alienOne.move("RIGHT");
+        ship.move("RIGHT");
       }
     }
-//    if(alienOne.getY()>0)
-  //  {
-    //  if(keys[2])
-  //    {
-    //    alienOne.move("UP");
-  //    }
-   // }
-    if(alienOne.getY()+2*alienOne.getHeight()<yDim)
+    if(ship.getY()>0)
+    {
+      if(keys[2])
+      {
+        ship.move("UP");
+      }
+    }
+    if(ship.getY()+2*ship.getHeight()<yDim)
     {
       if(keys[3])
       {
-        alienOne.move("DOWN");
+        ship.move("DOWN");
       }
     }
-
-    //add code to move Ship, Alien, etc.
+    
 
 
     //add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
