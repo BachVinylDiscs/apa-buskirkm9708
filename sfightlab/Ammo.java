@@ -37,9 +37,10 @@ public class Ammo extends MovingThing
     return speed;
   }
 
-  public void draw(Graphics window)
+  public void draw(Graphics window,int x,int y)
   {
-    window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
+    window.setColor(Color.YELLOW);
+    window.fillRect(x,y,10,10);
   }
         
         
