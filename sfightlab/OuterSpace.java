@@ -104,7 +104,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
         ship.move("DOWN");
       }
     }
-    
 
 
     //add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
