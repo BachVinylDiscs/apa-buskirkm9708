@@ -82,34 +82,8 @@ public abstract class MovingThing implements Moveable
     return height;
   }
 
-  public boolean didCollideLeft(Ammo block)
-  {
-    return getX()<=block.getX()+block.getWidth()&&getX()>block.getX()&&getY()>block.getY()-getHeight()&&getY()<block.getY()+block.getHeight();
-  }
-  
-  public boolean didCollideRight(Ammo block)
-  {
-    return getX()+getWidth()>=block.getX()&&getX()+getWidth()<block.getX()+block.getWidth()&&getY()>block.getY()-getHeight()&&getY()<block.getY()+block.getHeight();
-  }
-  
-  public boolean didCollideTop(Ammo block)
-  {
-    return getY()<=block.getY()+block.getHeight()&&getY()>block.getY()&&getX()>block.getX()-getWidth()&&getX()<block.getX()+block.getWidth();
-  }
-  
-  public boolean didCollideBottom(Ammo block)
-  {
-    return getY()+getHeight()>=block.getY()&&getY()+getHeight()<block.getY()+block.getHeight()&&getX()>block.getX()-getWidth()&&getX()<block.getX()+block.getWidth();
-  }
-  
-  public boolean didCollide(Ammo block)
-  {
-    return didCollideLeft(block)||didCollideRight(block)||didCollideTop(block)||didCollideBottom(block);
-  }
-
-
   public abstract void move(String direction);
-  public abstract void draw(Graphics window);
+  public abstract void draw(Graphics window,int x,int y);
 
   public String toString()
   {
