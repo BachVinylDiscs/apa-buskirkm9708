@@ -45,7 +45,7 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
   }
         
         
-  public void move(String direction)
+  public void move(String dir)
   {
     if(dir.equals("UP"))
       setY(getY()-1);
