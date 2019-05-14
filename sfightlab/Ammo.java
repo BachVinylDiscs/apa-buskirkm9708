@@ -8,7 +8,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 
-public class Ammo extends MovingThing
+public class Ammo extends MovingThing implements Collidable<MovingThing>
 {
   private int speed;
 
@@ -49,7 +49,27 @@ public class Ammo extends MovingThing
     if(dir.equals("UP"))
       setY(getY()-1);
   }
-
+  
+  public boolean didCollideLeft(MovingThing block)
+  {
+    return getX()<=block.getX()+block.getWidth()&&getX()>block.getX()&&getY()>block.getY()-getHeight()&&getY()<block.getY()+block.getHeight();
+  }
+  
+  public boolean didCollideRight(MovingThing block)
+  {
+    return getX()+getWidth()>=block.getX()&&getX()+getWidth()<block.getX()+block.getWidth()&&getY()>block.getY()-getHeight()&&getY()<block.getY()+block.getHeight();
+  }
+  
+  public boolean didCollideTop(MovingThing block)
+  {
+    return getY()<=block.getY()+block.getHeight()&&getY()>block.getY()&&getX()>block.getX()-getWidth()&&getX()<block.getX()+block.getWidth();
+  }
+  
+  public boolean didCollideBottom(MovingThing block)
+  {
+    return getY()+getHeight()>=block.getY()&&getY()+getHeight()<block.getY()+block.getHeight()&&getX()>block.getX()-getWidth()&&getX()<block.getX()+block.getWidth();
+  }
+  
   public String toString()
   {
     return super.toString() + getSpeed();
