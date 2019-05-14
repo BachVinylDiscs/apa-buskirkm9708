@@ -24,7 +24,8 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
 
   public Ammo(int x,int y,int s)
   {
-    super(x,y,10,10,s);
+    super(x,y,10,10);
+    speed=s;
   }
 
   public void setSpeed(int s)
