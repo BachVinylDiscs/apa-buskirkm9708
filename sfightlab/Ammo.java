@@ -49,7 +49,7 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
     if(dir.equals("UP"))
       setY(getY()-1);
   }
-  
+  /*
   public boolean didCollideLeft(MovingThing block)
   {
     return getX()<=block.getX()+block.getWidth()&&getX()>block.getX()&&getY()>block.getY()-getHeight()&&getY()<block.getY()+block.getHeight();
@@ -74,7 +74,7 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
   {
     return didCollideLeft(block)||didCollideRight(block)||didCollideTop(block)||didCollideBottom(block);
   }
-
+*/
   public String toString()
   {
     return super.toString() + getSpeed();
