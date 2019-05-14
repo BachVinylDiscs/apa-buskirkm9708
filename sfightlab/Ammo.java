@@ -70,6 +70,11 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
     return getY()+getHeight()>=block.getY()&&getY()+getHeight()<block.getY()+block.getHeight()&&getX()>block.getX()-getWidth()&&getX()<block.getX()+block.getWidth();
   }
   
+  public boolean didCollide(MovingThing block)
+  {
+    return didCollideLeft(block)||didCollideRight(block)||didCollideTop(block)||didCollideBottom(block);
+  }
+
   public String toString()
   {
     return super.toString() + getSpeed();
