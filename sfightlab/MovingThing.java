@@ -83,7 +83,7 @@ public abstract class MovingThing implements Moveable
   }
 
   public abstract void move(String direction);
-  public abstract void draw(Graphics window,int x,int y);
+  public abstract void draw(Graphics window);
 
   public String toString()
   {
