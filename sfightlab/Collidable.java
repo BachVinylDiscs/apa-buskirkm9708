@@ -4,4 +4,5 @@ public interface Collidable<T>
   boolean didCollideRight(T obj);
   boolean didCollideTop(T obj);
   boolean didCollideBottom(T obj);
+  boolean didCollide(T obj);
 }
