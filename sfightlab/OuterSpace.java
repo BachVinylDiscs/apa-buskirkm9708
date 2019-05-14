@@ -21,6 +21,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
   private Ship ship;
   private Alien alienOne;
   private Alien alienTwo;
+  private Ammo ammo;
+  private boolean visible;
 
   /* uncomment once you are ready for this part
    *
@@ -44,6 +46,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     ship=new Ship(10,10,50,50,5);
     alienOne=new Alien(10,100,50,50,5);
     alienTwo=new Alien(110,100,50,50,5);
+    ammo=new Ammo();
+    visible=false;
     this.addKeyListener(this);
     new Thread(this).start();
 
@@ -104,8 +108,21 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
         ship.move("DOWN");
       }
     }
-
-
+    if(keys[4])
+    {
+      ammo.setPos((int)(2*ship.getX()+ship.getWidth())/2-5,ship.getY()-15);
+      visible=true;
+    }
+    while(visible)
+    {
+      ammo.draw(graphToBack);
+      ammo.move("UP");
+    }
+    if(ammo.didCollide(alienOne)||ammo.didCollide(alienTwo)||ammo.getY()<=0)
+    {
+      visible=false;
+    }
+     
     //add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
 
 
