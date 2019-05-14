@@ -8,7 +8,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 
-public class Ammo extends MovingThing
+public class Ammo extends MovingThing implements Collidable<MovingThing>
 {
   private int speed;
 
