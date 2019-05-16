@@ -19,16 +19,9 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
   private int xDim;
   private int yDim;
   private Ship ship;
-  private Alien alienOne;
-  private Alien alienTwo;
   private Ammo ammo;
-  private boolean visible;
-
-  /* uncomment once you are ready for this part
-   *
-   private AlienHorde horde;
-   private Bullets shots;
-  */
+  private AlienHorde horde;
+  private Bullets shots;
 
   private boolean[] keys;
   private BufferedImage back;
@@ -44,10 +37,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     //Ship, Alien
     
     ship=new Ship(10,10,50,50,5);
-    alienOne=new Alien(10,100,50,50,5);
-    alienTwo=new Alien(110,100,50,50,5);
+    horde=new AlienHorde(6);
     ammo=new Ammo();
-    visible=false;
     this.addKeyListener(this);
     new Thread(this).start();
 
@@ -78,8 +69,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     graphToBack.setColor(Color.BLACK);
     graphToBack.fillRect(0,0,xDim,yDim);
     ship.draw(graphToBack);
-    alienOne.draw(graphToBack);
-    alienTwo.draw(graphToBack);
+    horde.drawEmAll(graphToBack);
+
     if(ship.getX()>0)
     {
       if(keys[0])
@@ -108,19 +99,32 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
         ship.move("DOWN");
       }
     }
+    for(Alien a:horde)
+    {
+      if(a.getX()+a.getWidth()>=xDim-10)
+      {
+	for(int i=0;i<10:i++)
+	{
+	  a.move("DOWN");
+	}
+        a.move("LEFT");
+      }
+    }
+
     if(keys[4])
     {
-      ammo.setPos((int)(2*ship.getX()+ship.getWidth())/2-5,ship.getY()-15);
       visible=true;
+      ammo.setPos((int)(2*ship.getX()+ship.getWidth())/2-5,ship.getY()-15);
     }
-    while(visible)
+    if(visible)
     {
       ammo.draw(graphToBack);
       ammo.move("UP");
     }
-    if(ammo.didCollide(alienOne)||ammo.didCollide(alienTwo)||ammo.getY()<=0)
+    if(ammo.didCollide(alienOne)||ammo.getY()<=0)
     {
       visible=false;
+      ammo.setPos(0,0);
     }
      
     //add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship

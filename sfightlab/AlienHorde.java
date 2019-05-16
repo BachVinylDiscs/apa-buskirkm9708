@@ -16,22 +16,37 @@ public class AlienHorde
 
   public AlienHorde(int size)
   {
+    aliens=new ArrayList<Alien>();
+    for(int a=0;a<aliens.size();a++)
+    {
+      aliens.add(new Alien(a*10+10,10));
+    }
   }
 
   public void add(Alien al)
   {
+    aliens.add(al);
   }
 
-  public void drawEmAll( Graphics window )
+  public void drawEmAll(Graphics window)
   {
+    for(Alien a:aliens)
+    {
+      a.draw(window);
+    }
   }
 
-  public void moveEmAll()
+  public void moveEmAll(String dir)
   {
+    for(Alien a:aliens)
+    {
+      a.move(dir);
+    }
   }
 
   public void removeDeadOnes(List<Ammo> shots)
   {
+
   }
 
   public String toString()
