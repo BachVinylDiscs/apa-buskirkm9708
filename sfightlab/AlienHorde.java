@@ -36,11 +36,28 @@ public class AlienHorde
     }
   }
 
-  public void moveEmAll(String dir)
+  public void moveEmAll(int x,int y)
   {
     for(Alien a:aliens)
     {
-      a.move(dir);
+      if(((int)(a.getY()-10)/100)%2==1)
+      {
+        if(a.getX()+a.getWidth>=x)
+        {
+          a.setY(a.getY()+100);
+        }else{
+          a.move("RIGHT");
+        }
+      }
+      if(((int)(a.getY()-10)/100)%2==0)
+      {
+        if(a.getX()<=0)
+        {
+          a.setY(a.getY()+100);
+        }else{
+          a.move("LEFT");
+        }
+      } 
     }
   }
 
