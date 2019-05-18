@@ -70,6 +70,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     graphToBack.fillRect(0,0,xDim,yDim);
     ship.draw(graphToBack);
     horde.drawEmAll(graphToBack);
+    horde.moveEmAll(xDim,yDim);
 
     if(ship.getX()>0)
     {
@@ -99,11 +100,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
         ship.move("DOWN");
       }
     }
-    for(Alien a:horde)
+/*    for(Alien a:horde)
     {
       if(a.getX()+a.getWidth()>=xDim-10)
       {
-	for(int i=0;i<10:i++)
+	for(int i=0;i<10;i++)
 	{
 	  a.move("DOWN");
 	}
@@ -126,7 +127,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
       visible=false;
       ammo.setPos(0,0);
     }
-     
+*/
     //add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
 
 

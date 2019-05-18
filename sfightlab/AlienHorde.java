@@ -17,9 +17,9 @@ public class AlienHorde
   public AlienHorde(int size)
   {
     aliens=new ArrayList<Alien>();
-    for(int a=0;a<aliens.size();a++)
+    for(int a=0;a<size;a++)
     {
-      aliens.add(new Alien(a*10+10,10));
+      aliens.add(new Alien(a*50+10,10));
     }
   }
 
@@ -40,22 +40,22 @@ public class AlienHorde
   {
     for(Alien a:aliens)
     {
-      if(((int)(a.getY()-10)/100)%2==1)
-      {
-        if(a.getX()+a.getWidth>=x)
-        {
-          a.setY(a.getY()+100);
-        }else{
-          a.move("RIGHT");
-        }
-      }
-      if(((int)(a.getY()-10)/100)%2==0)
+      if(((int)(a.getY()-10)/50)%2==1)
       {
         if(a.getX()<=0)
         {
-          a.setY(a.getY()+100);
+          a.setY(a.getY()+50);
         }else{
           a.move("LEFT");
+        }
+      }
+      if(((int)(a.getY()-10)/50)%2==0)
+      {
+        if(a.getX()+a.getWidth()>=x)
+        {
+          a.setY(a.getY()+50);
+        }else{
+          a.move("RIGHT");
         }
       } 
     }

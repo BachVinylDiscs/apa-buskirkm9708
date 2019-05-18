@@ -16,17 +16,17 @@ public class Alien extends MovingThing
 
   public Alien()
   {
-    this(0,0,30,30,10);
+    this(0,0,50,50,10);
   }
 
   public Alien(int x, int y)
   {
-    this(x,y,10,10,10);
+    this(x,y,50,50,10);
   }
 
   public Alien(int x, int y, int s)
   {
-    this(x,y,10,10,s);
+    this(x,y,50,50,s);
   }
 
   public Alien(int x, int y, int w, int h, int s)
