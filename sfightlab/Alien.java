@@ -9,7 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 
-public class Alien extends MovingThing
+public class Alien extends MovingThing implements Collidable
 {
   private int speed;
   private Image image;
@@ -62,6 +62,31 @@ public class Alien extends MovingThing
       setX(getX()+1);
     if(dir.equals("DOWN"))
       setY(getY()+1);
+  }
+
+  public boolean didCollideLeft(MovingThing block)
+  {
+    return getX()<=block.getX()+block.getWidth()&&getX()>block.getX()&&getY()>block.getY()-getHeight()&&getY()<block.getY()+block.getHeight();
+  }
+  
+  public boolean didCollideRight(MovingThing block)
+  {
+    return getX()+getWidth()>=block.getX()&&getX()+getWidth()<block.getX()+block.getWidth()&&getY()>block.getY()-getHeight()&&getY()<block.getY()+block.getHeight();
+  }
+  
+  public boolean didCollideTop(MovingThing block)
+  {
+    return getY()<=block.getY()+block.getHeight()&&getY()>block.getY()&&getX()>block.getX()-getWidth()&&getX()<block.getX()+block.getWidth();
+  }
+  
+  public boolean didCollideBottom(MovingThing block)
+  {
+    return getY()+getHeight()>=block.getY()&&getY()+getHeight()<block.getY()+block.getHeight()&&getX()>block.getX()-getWidth()&&getX()<block.getX()+block.getWidth();
+  }
+  
+  public boolean didCollide(MovingThing block)
+  {
+    return didCollideLeft(block)||didCollideRight(block)||didCollideTop(block)||didCollideBottom(block);
   }
 
   public void draw( Graphics window )
