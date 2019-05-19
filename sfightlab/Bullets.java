@@ -16,28 +16,43 @@ public class Bullets
 
   public Bullets()
   {
+    ammo=ArrayList<Ammo>();
   }
 
-  public void add(Ammo al)
+  public void add(int x,int y)
   {
+    ammo.add(new Ammo(x,y));
   }
 
   //post - draw each Ammo
-  public void drawEmAll( Graphics window )
+  public void drawEmAll(Graphics window)
   {
+    for(Ammo a:ammo){
+      a.draw(window);
+    }
   }
 
   public void moveEmAll()
   {
+    for(Ammo a:ammo){
+      a.move("UP");
+    }
   }
 
-  public void cleanEmUp()
+  public void cleanEmUp(List<Alien> horde)
   {
+    for(Ammo a:ammo){
+      for(Alien l:horde){
+	if(a.didCollide(l)||a.getY()<=0){
+	  ammo.remove(a);
+	}
+      }
+    }
   }
 
   public List<Ammo> getList()
   {
-    return null;
+    return ammo;
   }
 
   public String toString()

@@ -14,12 +14,12 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
 
   public Ammo()
   {
-    this(0,0,0);
+    this(10,10,10);
   }
 
   public Ammo(int x,int y)
   {
-    this(x,y,0);
+    this(x,y,10);
   }
 
   public Ammo(int x,int y,int s)

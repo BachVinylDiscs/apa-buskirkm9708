@@ -19,7 +19,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
   private int xDim;
   private int yDim;
   private Ship ship;
-  private Ammo ammo;
+  private Bullets ammo;
   private AlienHorde horde;
   private Bullets shots;
 
@@ -38,7 +38,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     
     ship=new Ship(10,10,50,50,5);
     horde=new AlienHorde(6);
-    ammo=new Ammo();
+    ammo=new Bullets();
     this.addKeyListener(this);
     new Thread(this).start();
 
@@ -71,6 +71,10 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     ship.draw(graphToBack);
     horde.drawEmAll(graphToBack);
     horde.moveEmAll(xDim,yDim);
+    horde.removeDeadOnes(ammo,yDim);
+    ammo.drawEmAll(graphToBack);
+    ammo.moveEmAll();
+    ammo.cleanEmUp(horde);
 
     if(ship.getX()>0)
     {
@@ -100,36 +104,10 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
         ship.move("DOWN");
       }
     }
-/*    for(Alien a:horde)
-    {
-      if(a.getX()+a.getWidth()>=xDim-10)
-      {
-	for(int i=0;i<10;i++)
-	{
-	  a.move("DOWN");
-	}
-        a.move("LEFT");
-      }
-    }
-
     if(keys[4])
     {
-      visible=true;
-      ammo.setPos((int)(2*ship.getX()+ship.getWidth())/2-5,ship.getY()-15);
+      ammo.add((int)(2*ship.getX()+ship.getWidth())/2-5,ship.getY()-15);
     }
-    if(visible)
-    {
-      ammo.draw(graphToBack);
-      ammo.move("UP");
-    }
-    if(ammo.didCollide(alienOne)||ammo.getY()<=0)
-    {
-      visible=false;
-      ammo.setPos(0,0);
-    }
-*/
-    //add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
-
 
     twoDGraph.drawImage(back, null, 0, 0);
   }
