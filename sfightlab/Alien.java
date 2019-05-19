@@ -9,7 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 
-public class Alien extends MovingThing implements Collidable
+public class Alien extends MovingThing implements Collidable<MovingThing>
 {
   private int speed;
   private Image image;
