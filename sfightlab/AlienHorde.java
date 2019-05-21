@@ -61,15 +61,19 @@ public class AlienHorde
     }
   }
 
-  public void removeDeadOnes(List<Ammo> ammo,int y)
+  public int removeDeadOnes(List<Ammo> ammo,int y)
   {
-    for(Alien a:aliens){
-      for(Ammo m:ammo){
-	if(a.didCollide(m)||a.getY()+a.getHeight()>y){
+    if(aliens.size()>0&&ammo.size()>0){
+    for(int a=0;a<aliens.size();a++){
+      for(int m=0;m<ammo.size();m++){
+	if(aliens.get(a).didCollide(ammo.get(m))||aliens.get(a).getY()+aliens.get(a).getHeight()>y){
 	  aliens.remove(a);
+          return m;
 	}
       }
     }
+    }
+    return -1;
   }
 
   public List<Alien> getList()

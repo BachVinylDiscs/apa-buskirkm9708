@@ -14,17 +14,17 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
 
   public Ammo()
   {
-    this(10,10,10);
+    this(10,10,3);
   }
 
   public Ammo(int x,int y)
   {
-    this(x,y,10);
+    this(x,y,3);
   }
 
   public Ammo(int x,int y,int s)
   {
-    super(x,y,10,10);
+    super(x,y,10,3);
     speed=s;
   }
 
@@ -48,7 +48,7 @@ public class Ammo extends MovingThing implements Collidable<MovingThing>
   public void move(String dir)
   {
     if(dir.equals("UP"))
-      setY(getY()-1);
+      setY(getY()-speed);
   }
   
   public boolean didCollideLeft(MovingThing block)

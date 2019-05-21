@@ -39,15 +39,9 @@ public class Bullets
     }
   }
 
-  public void cleanEmUp(List<Alien> horde)
+  public void cleanEmUp(List<Alien> horde,int m)
   {
-    for(Ammo a:ammo){
-      for(Alien l:horde){
-	if(a.didCollide(l)||a.getY()<=0){
-	  ammo.remove(a);
-	}
-      }
-    }
+    ammo.remove(m);
   }
 
   public List<Ammo> getList()

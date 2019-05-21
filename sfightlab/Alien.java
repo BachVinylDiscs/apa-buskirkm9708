@@ -16,12 +16,12 @@ public class Alien extends MovingThing implements Collidable<MovingThing>
 
   public Alien()
   {
-    this(0,0,50,50,10);
+    this(0,0,50,50,1);
   }
 
   public Alien(int x, int y)
   {
-    this(x,y,50,50,10);
+    this(x,y,50,50,1);
   }
 
   public Alien(int x, int y, int s)
@@ -57,11 +57,11 @@ public class Alien extends MovingThing implements Collidable<MovingThing>
   public void move(String dir)
   {
     if(dir.equals("LEFT"))
-      setX(getX()-1);
+      setX(getX()-speed);
     if(dir.equals("RIGHT"))
-      setX(getX()+1);
+      setX(getX()+speed);
     if(dir.equals("DOWN"))
-      setY(getY()+1);
+      setY(getY()+speed);
   }
 
   public boolean didCollideLeft(MovingThing block)

@@ -16,17 +16,22 @@ public class Ship extends MovingThing
 
   public Ship()
   {
-    this(10,10,10,10,10);
+    this(10,10,10,10,2);
   }
 
   public Ship(int x,int y)
   {
-    this(x,y,10,10,10);
+    this(x,y,10,10,2);
   }
 
   public Ship(int x,int y,int s)
   {
     this(x,y,10,10,s);
+  }
+
+  public Ship(int x,int y,int w,int h)
+  {
+    this(x,y,w,h,2);
   }
 
   public Ship(int x,int y,int w,int h,int s)
@@ -57,13 +62,13 @@ public class Ship extends MovingThing
   public void move(String dir)
   {
     if(dir.equals("LEFT"))
-      setX(getX()-1);
+      setX(getX()-speed);
     if(dir.equals("RIGHT"))
-      setX(getX()+1);
+      setX(getX()+speed);
     if(dir.equals("UP"))
-      setY(getY()-1);
+      setY(getY()-speed);
     if(dir.equals("DOWN"))
-      setY(getY()+1);
+      setY(getY()+speed);
   }
 
   public void draw(Graphics window)
