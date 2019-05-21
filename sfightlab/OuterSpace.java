@@ -71,10 +71,10 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     ship.draw(graphToBack);
     horde.drawEmAll(graphToBack);
     horde.moveEmAll(xDim,yDim);
-    horde.removeDeadOnes(ammo,yDim);
+    horde.removeDeadOnes(ammo.getList(),yDim);
     ammo.drawEmAll(graphToBack);
     ammo.moveEmAll();
-    ammo.cleanEmUp(horde);
+    ammo.cleanEmUp(horde.getList());
 
     if(ship.getX()>0)
     {
@@ -104,11 +104,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
         ship.move("DOWN");
       }
     }
-    if(keys[4])
+/*    if(keyReleased(KeyEvent.VK_SPACE))
     {
       ammo.add((int)(2*ship.getX()+ship.getWidth())/2-5,ship.getY()-15);
     }
-
+*/
     twoDGraph.drawImage(back, null, 0, 0);
   }
 
@@ -159,6 +159,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
     if (e.getKeyCode() == KeyEvent.VK_SPACE)
     {
       keys[4] = false;
+      ammo.add((int)(2*ship.getX()+ship.getWidth())/2-5,ship.getY()-15);
     }
     repaint();
   }

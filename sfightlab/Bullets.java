@@ -16,7 +16,7 @@ public class Bullets
 
   public Bullets()
   {
-    ammo=ArrayList<Ammo>();
+    ammo=new ArrayList<Ammo>();
   }
 
   public void add(int x,int y)
