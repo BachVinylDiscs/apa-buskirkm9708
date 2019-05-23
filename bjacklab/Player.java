@@ -9,7 +9,18 @@ import java.util.Scanner;
 
 
 //define Player class here 
+public class Player extends AbstractPlayer
+{
+  public Player()
+  {
+    super();
+  }
 
+  public boolean hit()
+  {
+    
+  }
+}
 
 
 
@@ -20,4 +31,3 @@ import java.util.Scanner;
 
 
 //hit method goes here
-
