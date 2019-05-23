@@ -1,5 +1,5 @@
 //Name -
-//Date -
+//Date - 
 //Class -
 //Lab  - 
 
@@ -7,44 +7,46 @@ import java.util.ArrayList;
 
 public abstract class AbstractPlayer implements Playerable
 {
-  private ArrayList<Card> hand;
+  private ArrayList<BlackJackCard> hand;
   private int winCount;
 
   //constructors
-
-  public  void addCardToHand( Card temp )
+  public AbstractPlayer()
   {
-
-
+    hand=new ArrayList<BlackJackCard>;
+    winCount=0;
   }
 
-  public  void resetHand( )
+  public void addCardToHand(BlackJackCard temp)
   {
-
-
+    hand.add(temp);
   }
 
-  public  void setWinCount( int numwins )
+  public void resetHand( )
   {
-
-
+    for(int i=0;i<hand.size();i++){
+      hand.remove(0);
+    }
   }
 
-  public int getWinCount() { return 0; }
+  public abstract boolean hit();
 
-  public int getHandSize() { return 0; }
+  public void setWinCount(int numwins)
+  {
+    winCount=numwins;
+  }
+
+  public int getWinCount() { return winCount; }
+
+  public int getHandSize() { return hand.size(); }
 
   public int getHandValue()
   {
     //great example of polymorphism
     int total=0;
-
-
-
-
-
-
-
+    for(BlackJackCard i:hand){
+      total+=i.getValue();
+    }
     return total;
   }
 
