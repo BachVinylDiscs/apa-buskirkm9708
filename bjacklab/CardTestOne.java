@@ -18,19 +18,19 @@ public class CardTestOne
 
     Card three = new BlackJackCard(4,"CLUBS");
     out.println(three);
-                
+
     Card four = new BlackJackCard(12,"SPADES");
     out.println(four);
-        
+
     Card five = new BlackJackCard(12,"HEARTS");
-    out.println(five);  
-                
+    out.println(five);
+
     Card six = new BlackJackCard(9,"SPADES");
-    out.println(six);                           
+    out.println(six);
 
     out.println(one.equals(two));
-    out.println(one.equals(one));               
-    out.println(four.equals(five));     
-    out.println(three.equals(four));                                            
+    out.println(one.equals(one));
+    out.println(four.equals(five));
+    out.println(three.equals(four));
   }
 }
